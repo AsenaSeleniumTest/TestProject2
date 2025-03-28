@@ -9,8 +9,7 @@ from selenium.common.exceptions import ElementNotInteractableException
 from log_config import logger
 
 class BasePage:
-    sql_server_pass = "Testingsql1."
-    sql_SSL_certificate ="CN=desktop-7m8q89a; CN=192.168.3.75"
+    
     
 
     def __init__(self,driver):
@@ -49,4 +48,4 @@ class BasePage:
             logger.debug("Element keys sent : ",element )
         except ElementNotInteractableException as ex:  
             logger.error("Error  element not available for kye send    ", ex.__str__)
-            print("Element cannot type data or is hidden : ", ex.__str__)      
+            print("Element cannot type data or is hidden : ", ex.__str__)       
