@@ -1,0 +1,394 @@
+[1mdiff --git a/.gitignore b/.gitignore[m
+[1mdeleted file mode 100644[m
+[1mindex c00b1d7..0000000[m
+[1m--- a/.gitignore[m
+[1m+++ /dev/null[m
+[36m@@ -1,3 +0,0 @@[m
+[31m-# Created by pytest automatically.[m
+[31m-# This file should not be added to version control.[m
+[31m-**ai-agents-for-beginners/[m
+\ No newline at end of file[m
+[1mdiff --git a/.pytest_cache/.gitignore b/.pytest_cache/.gitignore[m
+[1mdeleted file mode 100644[m
+[1mindex 285c0e9..0000000[m
+[1m--- a/.pytest_cache/.gitignore[m
+[1m+++ /dev/null[m
+[36m@@ -1,3 +0,0 @@[m
+[31m-# Created by pytest automatically.[m
+[31m-# This file should not be added to version control.[m
+[31m-**ai-agents-for-beginners/[m
+[1mdiff --git a/.pytest_cache/CACHEDIR.TAG b/.pytest_cache/CACHEDIR.TAG[m
+[1mdeleted file mode 100644[m
+[1mindex fce15ad..0000000[m
+[1m--- a/.pytest_cache/CACHEDIR.TAG[m
+[1m+++ /dev/null[m
+[36m@@ -1,4 +0,0 @@[m
+[31m-Signature: 8a477f597d28d172789f06886806bc55[m
+[31m-# This file is a cache directory tag created by pytest.[m
+[31m-# For information about cache directory tags, see:[m
+[31m-#	https://bford.info/cachedir/spec.html[m
+[1mdiff --git a/.pytest_cache/README.md b/.pytest_cache/README.md[m
+[1mdeleted file mode 100644[m
+[1mindex b89018c..0000000[m
+[1m--- a/.pytest_cache/README.md[m
+[1m+++ /dev/null[m
+[36m@@ -1,8 +0,0 @@[m
+[31m-# pytest cache directory #[m
+[31m-[m
+[31m-This directory contains data from the pytest's cache plugin,[m
+[31m-which provides the `--lf` and `--ff` options, as well as the `cache` fixture.[m
+[31m-[m
+[31m-**Do not** commit this to version control.[m
+[31m-[m
+[31m-See [the docs](https://docs.pytest.org/en/stable/how-to/cache.html) for more information.[m
+[1mdiff --git a/.pytest_cache/v/cache/lastfailed b/.pytest_cache/v/cache/lastfailed[m
+[1mdeleted file mode 100644[m
+[1mindex cadd15e..0000000[m
+[1m--- a/.pytest_cache/v/cache/lastfailed[m
+[1m+++ /dev/null[m
+[36m@@ -1,6 +0,0 @@[m
+[31m-{[m
+[31m-  "Tests/Test_Base.py::Test_Base::test_get_title[chrome]": true,[m
+[31m-  "Tests/Test_Base.py::Test_Base::test_get_current_window[chrome]": true,[m
+[31m-  "Tests/Test_MainPage.py::Test_Main_Page::test_welcometitle[chrome]": true,[m
+[31m-  "Tests/Test_MainPage.py": true[m
+[31m-}[m
+\ No newline at end of file[m
+[1mdiff --git a/.pytest_cache/v/cache/nodeids b/.pytest_cache/v/cache/nodeids[m
+[1mdeleted file mode 100644[m
+[1mindex ac636ce..0000000[m
+[1m--- a/.pytest_cache/v/cache/nodeids[m
+[1m+++ /dev/null[m
+[36m@@ -1,6 +0,0 @@[m
+[31m-[[m
+[31m-  "Tests/Test_Base.py::Test_Base::test_get_current_window[chrome]",[m
+[31m-  "Tests/Test_Base.py::Test_Base::test_get_title[chrome]",[m
+[31m-  "Tests/Test_MainPage.py::Test_Main_Page::test_welcometitle",[m
+[31m-  "Tests/Test_MainPage.py::Test_Main_Page::test_welcometitle[chrome]"[m
+[31m-][m
+\ No newline at end of file[m
+[1mdiff --git a/.pytest_cache/v/cache/stepwise b/.pytest_cache/v/cache/stepwise[m
+[1mdeleted file mode 100644[m
+[1mindex 0637a08..0000000[m
+[1m--- a/.pytest_cache/v/cache/stepwise[m
+[1m+++ /dev/null[m
+[36m@@ -1 +0,0 @@[m
+[31m-[][m
+\ No newline at end of file[m
+[1mdiff --git a/.vscode/settings.json b/.vscode/settings.json[m
+[1mdeleted file mode 100644[m
+[1mindex 0477e15..0000000[m
+[1m--- a/.vscode/settings.json[m
+[1m+++ /dev/null[m
+[36m@@ -1,7 +0,0 @@[m
+[31m-{[m
+[31m-    "python.testing.pytestArgs": [[m
+[31m-        "Tests"[m
+[31m-    ],[m
+[31m-    "python.testing.unittestEnabled": false,[m
+[31m-    "python.testing.pytestEnabled": true[m
+[31m-}[m
+\ No newline at end of file[m
+[1mdiff --git a/Pages/BasePage.py b/Pages/BasePage.py[m
+[1mdeleted file mode 100644[m
+[1mindex e630ab8..0000000[m
+[1m--- a/Pages/BasePage.py[m
+[1m+++ /dev/null[m
+[36m@@ -1,52 +0,0 @@[m
+[31m-import selenium.webdriver as webdriver[m
+[31m-import logging as Logger[m
+[31m-import selenium.webdriver.common.by as By[m
+[31m-from selenium.webdriver.support.ui import WebDriverWait[m
+[31m-from selenium.webdriver.support import expected_conditions as EC[m
+[31m-from selenium.common.exceptions import ElementClickInterceptedException[m
+[31m-from selenium.common.exceptions import NoSuchElementException[m
+[31m-from selenium.common.exceptions import ElementNotInteractableException[m
+[31m-from log_config import logger[m
+[31m-[m
+[31m-class BasePage:[m
+[31m-    sql_server_pass = "Testingsql1."[m
+[31m-    sql_SSL_certificate ="CN=desktop-7m8q89a; CN=192.168.3.75"[m
+[31m-    [m
+[31m-[m
+[31m-    def __init__(self,driver):[m
+[31m-        self.driver = driver[m
+[31m-        self.wait = WebDriverWait(self.driver, 10)[m
+[31m-        [m
+[31m-    [m
+[31m-    def get_title(self): [m
+[31m-        """ Get the title of the page """[m
+[31m-        return self.driver.title[m
+[31m-[m
+[31m-    def get_current_window(self):[m
+[31m-        """ Get the current window handle """[m
+[31m-        return self.driver.current_window_handle[m
+[31m-    [m
+[31m-    def click_element(self,element):[m
+[31m-        try:[m
+[31m-            logger.debug("clicking on element ",element )[m
+[31m-            self.wait.until(EC.visibility_of_element_located(element)).click()[m
+[31m-        except ElementClickInterceptedException as ex:[m
+[31m-            logger.error("Error clicking element ", ex.__str__)[m
+[31m-            print("Element is not clickable : ",ex.__str__)[m
+[31m-[m
+[31m-    def element_status_displayed(self,element):[m
+[31m-        """check if element is displayed"""[m
+[31m-        try:[m
+[31m-            logger.debug("Element displayed: ",element )[m
+[31m-            return self.wait.until(EC.visibility_of_element_located(element)).is_displayed()[m
+[31m-        except NoSuchElementException as ex:[m
+[31m-            logger.error("Error  element not displayed  ", ex.__str__)[m
+[31m-            print("element not found or took to much time to load : ",ex.__str__)                [m
+[31m-[m
+[31m-    def type_text(self,element,text):[m
+[31m-        try:[m
+[31m-            self.wait.until(EC.visibility_of_element_located(element)).send_keys(text)[m
+[31m-            logger.debug("Element keys sent : ",element )[m
+[31m-        except ElementNotInteractableException as ex:  [m
+[31m-            logger.error("Error  element not available for kye send    ", ex.__str__)[m
+[31m-            print("Element cannot type data or is hidden : ", ex.__str__)      [m
+\ No newline at end of file[m
+[1mdiff --git a/Pages/MainPage.py b/Pages/MainPage.py[m
+[1mdeleted file mode 100644[m
+[1mindex e95f2da..0000000[m
+[1m--- a/Pages/MainPage.py[m
+[1m+++ /dev/null[m
+[36m@@ -1,19 +0,0 @@[m
+[31m-import selenium.webdriver as webdriver[m
+[31m-import selenium.webdriver.common.by as By[m
+[31m-from selenium.webdriver.support.ui import WebDriverWait[m
+[31m-from selenium.webdriver.support import expected_conditions as EC[m
+[31m-from selenium.common.exceptions import ElementClickInterceptedException[m
+[31m-from selenium.common.exceptions import NoSuchElementException[m
+[31m-from Pages.BasePage import BasePage[m
+[31m-[m
+[31m-class MainPage(BasePage):[m
+[31m-    welcome_title = (By.XPATH,"//h1[contains(text(),'Welcome to BPB Online')]")[m
+[31m-    myaccount_link = (By.LINK_TEXT, "My Account")[m
+[31m-    checkout_link = (By.LINK_TEXT, "Checkout")[m
+[31m-    cart_content = (By.XPATH, "//div[@id='headerShortcuts']//span[contains(text(),'Cart Contents')]")[m
+[31m-    [m
+[31m-    def __init__(self, driver):[m
+[31m-        super().__init__(driver)[m
+[31m-[m
+[31m-    def title_displayed(self):[m
+[31m-        return BasePage.element_status_displayed(self.welcome_title).displayed[m
+\ No newline at end of file[m
+[1mdiff --git a/Pages/__init__.py b/Pages/__init__.py[m
+[1mdeleted file mode 100644[m
+[1mindex e69de29..0000000[m
+[1mdiff --git a/Pages/__pycache__/BasePage.cpython-313.pyc b/Pages/__pycache__/BasePage.cpython-313.pyc[m
+[1mdeleted file mode 100644[m
+[1mindex 0976084..0000000[m
+Binary files a/Pages/__pycache__/BasePage.cpython-313.pyc and /dev/null differ
+[1mdiff --git a/Pages/__pycache__/MainPage.cpython-313.pyc b/Pages/__pycache__/MainPage.cpython-313.pyc[m
+[1mdeleted file mode 100644[m
+[1mindex fa91ab8..0000000[m
+Binary files a/Pages/__pycache__/MainPage.cpython-313.pyc and /dev/null differ
+[1mdiff --git a/Pages/__pycache__/__init__.cpython-313.pyc b/Pages/__pycache__/__init__.cpython-313.pyc[m
+[1mdeleted file mode 100644[m
+[1mindex 8e6758e..0000000[m
+Binary files a/Pages/__pycache__/__init__.cpython-313.pyc and /dev/null differ
+[1mdiff --git a/Pages/log_config.py b/Pages/log_config.py[m
+[1mdeleted file mode 100644[m
+[1mindex ed906ab..0000000[m
+[1m--- a/Pages/log_config.py[m
+[1m+++ /dev/null[m
+[36m@@ -1,7 +0,0 @@[m
+[31m-import logging as Logger[m
+[31m-[m
+[31m-Logger.basicConfig(filename="test_log.log",  # Log file name[m
+[31m-            level=Logger.INFO,  # Logging level (INFO, DEBUG, WARNING, ERROR, CRITICAL)[m
+[31m-            format="%(asctime)s - %(levelname)s - %(message)s",  # Log format[m
+[31m-            datefmt="%Y-%m-%d %H:%M:%S",)[m
+[31m-logger = Logger.getLogger()[m
+\ No newline at end of file[m
+[1mdiff --git a/README.md b/README.md[m
+[1mnew file mode 100644[m
+[1mindex 0000000..5a74238[m
+[1m--- /dev/null[m
+[1m+++ b/README.md[m
+[36m@@ -0,0 +1,2 @@[m
+[32m+[m[32m# TestProject2[m
+[32m+[m[32mPython tests[m
+[1mdiff --git a/Tests/Test_Base.py b/Tests/Test_Base.py[m
+[1mdeleted file mode 100644[m
+[1mindex 72f8ebc..0000000[m
+[1m--- a/Tests/Test_Base.py[m
+[1m+++ /dev/null[m
+[36m@@ -1,28 +0,0 @@[m
+[31m-import pytest [m
+[31m-from selenium import webdriver[m
+[31m-from selenium.webdriver.chrome.service import Service[m
+[31m-from webdriver_manager.chrome import ChromeDriverManager[m
+[31m-from webdriver_manager.microsoft import EdgeChromiumDriverManager[m
+[31m-from Pages.BasePage import BasePage[m
+[31m-[m
+[31m-[m
+[31m-class Test_Base:[m
+[31m-    driver = None[m
+[31m-    HOME_URL="https://practice.bpbonline.com/"[m
+[31m-    @pytest.fixture(scope='class',autouse=True,params=["chrome"])[m
+[31m-    def setup(self,request):[m
+[31m-        if request.param == "chrome":[m
+[31m-            self.service = Service(ChromeDriverManager().install())[m
+[31m-            self.options = webdriver.ChromeOptions()[m
+[31m-            self.driver = webdriver.Chrome(service=self.service,options=self.options)[m
+[31m-            self.driver.maximize_window()[m
+[31m-           [m
+[31m-        elif request.param == "edge":[m
+[31m-            self.service = Service(EdgeChromiumDriverManager().install())[m
+[31m-            self.options = webdriver.EdgeOptions()[m
+[31m-            self.driver = webdriver.Edge(service = self.service,options = self.options)[m
+[31m-            self.driver.maximize_window()[m
+[31m-            [m
+[31m-        return self.driver[m
+[31m-[m
+[31m-    [m
+\ No newline at end of file[m
+[1mdiff --git a/Tests/Test_MainPage.py b/Tests/Test_MainPage.py[m
+[1mdeleted file mode 100644[m
+[1mindex 15e9fc1..0000000[m
+[1m--- a/Tests/Test_MainPage.py[m
+[1m+++ /dev/null[m
+[36m@@ -1,17 +0,0 @@[m
+[31m-import pytest[m
+[31m-from Pages.BasePage import BasePage[m
+[31m-from Pages.MainPage import MainPage[m
+[31m-from log_config import logger[m
+[31m-[m
+[31m-@pytest.mark.usefixtures("driver_Setup")[m
+[31m-class Test_Main_Page():[m
+[31m-    """Test Main page elements"""[m
+[31m-    driver = None[m
+[31m-[m
+[31m-    @pytest.mark.WelcomeTitle[m
+[31m-    def test_welcometitle(self,driver_Setup):    [m
+[31m-        self.driver = driver_Setup [m
+[31m-        bPage=BasePage(self.driver)[m
+[31m-        mainp =MainPage(self.driver)[m
+[31m-        logger.info("Browser opened ")[m
+[31m-        assert mainp.title_displayed == True  [m
+[1mdiff --git a/Tests/__pycache__/Test_Base.cpython-313-pytest-8.3.5.pyc b/Tests/__pycache__/Test_Base.cpython-313-pytest-8.3.5.pyc[m
+[1mdeleted file mode 100644[m
+[1mindex 44a853a..0000000[m
+Binary files a/Tests/__pycache__/Test_Base.cpython-313-pytest-8.3.5.pyc and /dev/null differ
+[1mdiff --git a/Tests/__pycache__/Test_MainPage.cpython-313-pytest-8.3.5.pyc b/Tests/__pycache__/Test_MainPage.cpython-313-pytest-8.3.5.pyc[m
+[1mdeleted file mode 100644[m
+[1mindex 6f11b93..0000000[m
+Binary files a/Tests/__pycache__/Test_MainPage.cpython-313-pytest-8.3.5.pyc and /dev/null differ
+[1mdiff --git a/Tests/__pycache__/conftest.cpython-313-pytest-8.3.5.pyc b/Tests/__pycache__/conftest.cpython-313-pytest-8.3.5.pyc[m
+[1mdeleted file mode 100644[m
+[1mindex 8b98562..0000000[m
+Binary files a/Tests/__pycache__/conftest.cpython-313-pytest-8.3.5.pyc and /dev/null differ
+[1mdiff --git a/Tests/__pycache__/log_config.cpython-313.pyc b/Tests/__pycache__/log_config.cpython-313.pyc[m
+[1mdeleted file mode 100644[m
+[1mindex 75a5919..0000000[m
+Binary files a/Tests/__pycache__/log_config.cpython-313.pyc and /dev/null differ
+[1mdiff --git a/Tests/conftest.py b/Tests/conftest.py[m
+[1mdeleted file mode 100644[m
+[1mindex 4c41ae3..0000000[m
+[1m--- a/Tests/conftest.py[m
+[1m+++ /dev/null[m
+[36m@@ -1,26 +0,0 @@[m
+[31m-from selenium import webdriver[m
+[31m-from selenium.webdriver.chrome.service import Service[m
+[31m-from webdriver_manager.chrome import ChromeDriverManager[m
+[31m-from webdriver_manager.microsoft import EdgeChromiumDriverManager[m
+[31m-import pytest[m
+[31m-[m
+[31m-HOME_URL = "https://practice.bpbonline.com/"[m
+[31m-[m
+[31m-@pytest.fixture(autouse=True, params=["chrome"], scope="class")[m
+[31m-def driver_Setup(request):[m
+[31m-    """ Setup the driver for the test """[m
+[31m-    driver = None[m
+[31m-    if request.param == "chrome":[m
+[31m-        service = Service(ChromeDriverManager().install())[m
+[31m-        options = webdriver.ChromeOptions()[m
+[31m-        driver = webdriver.Chrome(service = service,options = options)[m
+[31m-        driver.maximize_window()[m
+[31m-        driver.get(HOME_URL)[m
+[31m-    elif request.param == "edge":[m
+[31m-        service = Service(EdgeChromiumDriverManager().install())[m
+[31m-        options = webdriver.EdgeOptions()[m
+[31m-        driver = webdriver.Edge(service = service,options = options)[m
+[31m-        driver.maximize_window()[m
+[31m-        driver.get(HOME_URL) [m
+[31m-            [m
+[31m-    return driver[m
+[1mdiff --git a/Tests/log_config.py b/Tests/log_config.py[m
+[1mdeleted file mode 100644[m
+[1mindex f4c211d..0000000[m
+[1m--- a/Tests/log_config.py[m
+[1m+++ /dev/null[m
+[36m@@ -1,8 +0,0 @@[m
+[31m-import logging as Logger[m
+[31m-[m
+[31m-Logger.basicConfig(filename="test_log.log",  # Log file name[m
+[31m-            level=Logger.INFO,  # Logging level (INFO, DEBUG, WARNING, ERROR, CRITICAL)[m
+[31m-            format="%(asctime)s - %(levelname)s - %(message)s",  # Log format[m
+[31m-            datefmt="%Y-%m-%d %H:%M:%S",[m
+[31m-            filemode="w")[m
+[31m-logger = Logger.getLogger()[m
+\ No newline at end of file[m
+[1mdiff --git a/Utility/__init__.py b/Utility/__init__.py[m
+[1mdeleted file mode 100644[m
+[1mindex e69de29..0000000[m
+[1mdiff --git a/Utility/file_manager.py b/Utility/file_manager.py[m
+[1mdeleted file mode 100644[m
+[1mindex ec841ae..0000000[m
+[1m--- a/Utility/file_manager.py[m
+[1m+++ /dev/null[m
+[36m@@ -1,32 +0,0 @@[m
+[31m-import sys[m
+[31m-import os[m
+[31m-import logging[m
+[31m-[m
+[31m-[m
+[31m-class File_Manager():[m
+[31m-    def __init__(self,directorypath):[m
+[31m-        self.directory=directorypath[m
+[31m-[m
+[31m-    def get_file_list(self):[m
+[31m-        try:[m
+[31m-            files = [f for f in os.listdir(self.directory) if os.path.isfile(os.path.join(self.directory,f))][m
+[31m-        except FileNotFoundError as ex:[m
+[31m-            logging.critical(f"Directory not found : {ex.__str__}" )[m
+[31m-        except PermissionError as exp:     [m
+[31m-            logging.critical(f"Directory Permission denied : {ex.__str__}" )[m
+[31m-        return files[m
+[31m-    [m
+[31m-    def delete_duplicate_file(self,file_list):[m
+[31m-        data_set = set(file_list)[m
+[31m-        try:[m
+[31m-            if data_set in file_list:[m
+[31m-                print(f"trying to delete: {data_set}")[m
+[31m-                os.remove(self.directory+data_set)[m
+[31m-        except FileNotFoundError as ferror:   [m
+[31m-            return ferror[m
+[31m-        [m
+[31m-        [m
+[31m-    [m
+[31m-file = File_Manager("C:\\Users\\amigo\\OneDrive\\Documentos\\Linux back up\\testdir1\\")[m
+[31m-archivos_in = file.get_file_list()[m
+[31m-file.delete_duplicate_file(archivos_in)[m
+[1mdiff --git a/ai-agents-for-beginners b/ai-agents-for-beginners[m
+[1mdeleted file mode 160000[m
+[1mindex 9700954..0000000[m
+[1m--- a/ai-agents-for-beginners[m
+[1m+++ /dev/null[m
+[36m@@ -1 +0,0 @@[m
+[31m-Subproject commit 9700954c36005b9ff23f2966749cf55d615708a3[m
+[1mdiff --git a/requirements.txt b/requirements.txt[m
+[1mdeleted file mode 100644[m
+[1mindex 641dbda..0000000[m
+[1m--- a/requirements.txt[m
+[1m+++ /dev/null[m
+[36m@@ -1,6 +0,0 @@[m
+[31m-selenium[m
+[31m-webdriver_manager[m
+[31m-pytest[m
+[31m-Appium-Python-Client[m
+[31m-pytest-xdist[m
+[31m-pytest-html[m
