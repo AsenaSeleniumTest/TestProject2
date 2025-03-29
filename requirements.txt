@@ -1,0 +1,6 @@
+selenium
+webdriver_manager
+pytest
+Appium-Python-Client
+pytest-xdist
+pytest-html

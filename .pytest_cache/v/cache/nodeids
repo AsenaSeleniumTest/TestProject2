@@ -1,0 +1,6 @@
+[
+  "Tests/Test_Base.py::Test_Base::test_get_current_window[chrome]",
+  "Tests/Test_Base.py::Test_Base::test_get_title[chrome]",
+  "Tests/Test_MainPage.py::Test_Main_Page::test_welcometitle",
+  "Tests/Test_MainPage.py::Test_Main_Page::test_welcometitle[chrome]"
+]
