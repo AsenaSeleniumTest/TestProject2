@@ -21,8 +21,9 @@ def sockMerchant(n, ar):
         for data in range(1,len(ar)):
             if ar[val] == ar[data]:
                 pair_count +=1
-                val +=1
-                data+=1
+                ar.remove(ar[val])
+                ar.remove(ar[data])
+                sockMerchant(n,ar) # recursive call to remove the pairs    
                 continue     
                 
     return pair_count
