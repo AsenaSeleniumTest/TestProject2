@@ -12,6 +12,11 @@ import sys
 # The function accepts following parameters:
 #  1. INTEGER n
 #  2. INTEGER_ARRAY ar
+# git init.
+# git add -A.
+# git commit -m 'Added my project'
+# git remote add origin git@github.com: sammy/my-new-project.git.
+# git push -u -f origin main.
 #
 
 def sockMerchant(n, ar):
