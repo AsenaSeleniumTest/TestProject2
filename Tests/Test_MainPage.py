@@ -14,4 +14,4 @@ class Test_Main_Page():
         bPage=BasePage(self.driver)
         mainp =MainPage(self.driver)
         logger.info("Browser opened ")
-        assert mainp.title_displayed == True  
+        assert mainp.title_displayed == True

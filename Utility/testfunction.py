@@ -15,6 +15,8 @@ import sys
 # git init.
 # git add -A.
 # git commit -m 'Added my project'
+# git tag "add tag version"
+# git push --tags 
 # git remote add origin git@github.com: sammy/my-new-project.git.
 # git push -u -f origin main.
 #
@@ -33,4 +35,7 @@ def sockMerchant(n, ar):
                 
     return pair_count
 
-print(sockMerchant(9,[10,20,20,10,10,30,50,10,20]))
+
+
+
+ 

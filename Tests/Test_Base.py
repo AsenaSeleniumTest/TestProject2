@@ -8,8 +8,8 @@ from Pages.BasePage import BasePage
 
 class Test_Base:
     driver = None
-    HOME_URL="https://practice.bpbonline.com/"
-    @pytest.fixture(scope='class',autouse=True,params=["chrome"])
+    HOME_URL="https://demoqa.com/"
+    @pytest.fixture(scope='class',autouse=True,params=["chrome"]) 
     def setup(self,request):
         if request.param == "chrome":
             self.service = Service(ChromeDriverManager().install())

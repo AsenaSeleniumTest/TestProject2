@@ -4,7 +4,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 import pytest
 
-HOME_URL = "https://practice.bpbonline.com/"
+HOME_URL = "https://demoqa.com/"
 
 @pytest.fixture(autouse=True, params=["chrome"], scope="class")
 def driver_Setup(request):
