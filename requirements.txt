@@ -4,3 +4,5 @@ pytest
 Appium-Python-Client
 pytest-xdist
 pytest-html
+behave
+

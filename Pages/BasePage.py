@@ -1,6 +1,6 @@
 import selenium.webdriver as webdriver
 import logging as Logger
-import selenium.webdriver.common.by as By
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import ElementClickInterceptedException
@@ -49,3 +49,12 @@ class BasePage:
         except ElementNotInteractableException as ex:  
             logger.error("Error  element not available for kye send    ", ex.__str__)
             print("Element cannot type data or is hidden : ", ex.__str__)       
+
+    def get_element_list(self,elements):
+        """ Get the list of elements on the webpage"""
+        try:
+            logger.debug("Getting element list : ",elements )
+            return self.wait.until(EC.visibility_of_all_elements_located(elements))
+        except NoSuchElementException as ex:
+            logger.error("Error  element list not found  ", ex.__str__)
+            return None

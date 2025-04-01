@@ -16,11 +16,15 @@ def driver_Setup(request):
         driver = webdriver.Chrome(service = service,options = options)
         driver.maximize_window()
         driver.get(HOME_URL)
+        yield 
+        driver.quit()
     elif request.param == "edge":
         service = Service(EdgeChromiumDriverManager().install())
         options = webdriver.EdgeOptions()
         driver = webdriver.Edge(service = service,options = options)
         driver.maximize_window()
         driver.get(HOME_URL) 
+        yield
+        driver.quit()
             
     return driver
