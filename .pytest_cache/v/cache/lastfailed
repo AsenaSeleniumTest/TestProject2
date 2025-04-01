@@ -3,6 +3,5 @@
   "Tests/Test_Base.py::Test_Base::test_get_current_window[chrome]": true,
   "Tests/Test_MainPage.py::Test_Main_Page::test_welcometitle[chrome]": true,
   "Tests/Test_MainPage.py": true,
-  "Tests/Test_Base.py::Test_Base": true,
-  "Tests/Test_Base.py": true
+  "Tests/Test_Base.py::Test_Base": true
 }
