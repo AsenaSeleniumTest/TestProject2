@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import pytest
 from Pages.BasePage import BasePage
 from Pages.MainPage import MainPage

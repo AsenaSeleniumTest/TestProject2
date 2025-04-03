@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import pytest 
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service

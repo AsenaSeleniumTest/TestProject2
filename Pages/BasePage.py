@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import selenium.webdriver as webdriver
 import logging as Logger
 from selenium.webdriver.common.by import By

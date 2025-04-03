@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import logging as Logger
 
 Logger.basicConfig(filename="test_log.log",  # Log file name

@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import selenium.webdriver as webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -25,7 +26,7 @@ class MainPage(BasePage):
     
     def click_elements_page(self):
         """ Click on the element """
-        BasePage.click_element(self.elements_link)
+        BasePage.click_element(element =self.elements_link)
 
     def click_forms_page(self):
         """ Click on the element """
