@@ -57,6 +57,9 @@ class Test_ElementsPage():
         mainp.click_elements_page()
         elements_page.click_text_box()
         elements_page.type_full_name(TestData.full_name)
+        elements_page.type_email(TestData.email)
+        elements_page.type_current_address(TestData.current_address)
+        elements_page.type_permant_address(TestData.Permanent_address)
 
     def tear_down(self):
         self.driver.quit()    
