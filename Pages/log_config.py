@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import logging as Logger
-
-Logger.basicConfig(filename="test_log.log",  # Log file name
+import datetime as DateTime
+Logger.basicConfig(filename=f"Logs\\pagelogs\\page_log{DateTime.date}.log",  # Log file name
             level=Logger.INFO,  # Logging level (INFO, DEBUG, WARNING, ERROR, CRITICAL)
             format="%(asctime)s - %(levelname)s - %(message)s",  # Log format
             datefmt="%Y-%m-%d %H:%M:%S",)

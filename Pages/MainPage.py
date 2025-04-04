@@ -17,7 +17,7 @@ class MainPage(BasePage):
     widgets_link = (By.XPATH,"//h5[text()='Widgets']")
     interactions_link = (By.XPATH,"//h5[text()='Interactions']")
     book_store_link = (By.XPATH,"//h5[text()='Book Store Application']")
-    
+    footer_element = (By.XPATH,"//footer")
 
 
     def __init__(self, driver):
@@ -26,27 +26,29 @@ class MainPage(BasePage):
     
     def click_elements_page(self):
         """ Click on the element """
-        BasePage.click_element(element =self.elements_link)
+        BasePage.click_element(self,element =self.elements_link)
 
     def click_forms_page(self):
         """ Click on the element """
-        BasePage.click_element(element =self.forms_link)   
+        BasePage.click_element(self,element =self.forms_link)   
 
     def click_alerts_page(self):
         """ Click on the element """
-        BasePage.click_element(element = self.alerts_link)     
+        BasePage.click_element(self,element = self.alerts_link)     
 
     def click_widgets_page(self):
         """ Click on the element """
-        BasePage.click_element(element = self.widgets_link)
+        BasePage.click_element(self,element = self.widgets_link)
 
     def click_interactions_page(self):
         """ Click on the element """
-        BasePage.click_element(element = self.interactions_link)
+        BasePage.click_element(self,element = self.interactions_link)
 
     def click_bookstore_page(self):
         """ Click on the element """    
-        BasePage.click_element(element = self.book_store_link)
+        BasePage.click_element(self,element = self.book_store_link)
 
-
+    def scroll_to_footer(self):
+        """ Scroll to the footers page """
+        BasePage.scroll_to_element(self,element = self.footer_element)
       

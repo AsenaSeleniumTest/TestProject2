@@ -2,11 +2,13 @@
 import selenium.webdriver as webdriver
 import logging as Logger
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import ElementClickInterceptedException
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import ElementNotInteractableException
+
 from log_config import logger
 
 class BasePage:
@@ -16,6 +18,7 @@ class BasePage:
     def __init__(self,driver):
         self.driver = driver
         self.wait = WebDriverWait(self.driver, 10)
+        self.action = ActionChains(self.driver)
         
     
     def get_title(self): 
@@ -59,3 +62,14 @@ class BasePage:
         except NoSuchElementException as ex:
             logger.error("Error  element list not found  ", ex.__str__)
             return None
+
+    def scroll_to_element(self,element):
+        """ Scroll to the element """
+        try:
+            logger.debug("Scrolling to element : ",element )
+            self.wait.until(EC.visibility_of_element_located(element))
+            self.action.move_to_element(self.driver.find_element(element)).perform()
+            #self.driver.execute_script("arguments[0].scrollIntoView();", element)
+        except NoSuchElementException as ex:
+            logger.error("Error  element not found for scroll  ", ex.__str__)
+            print("Element not found or took to much time to load : ",ex.__str__)    

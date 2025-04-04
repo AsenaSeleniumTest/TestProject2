@@ -2,7 +2,7 @@
   "Tests/Test_Base.py::Test_Base::test_get_title[chrome]": true,
   "Tests/Test_Base.py::Test_Base::test_get_current_window[chrome]": true,
   "Tests/Test_MainPage.py::Test_Main_Page::test_welcometitle[chrome]": true,
-  "Tests/Test_ElementsPage.py::Test_ElementsPage::test_elementstitle[chrome]": true,
   "Tests/Test_ElementsPage.py::Test_ElementsPage::test_elementsmenu_count[chrome]": true,
-  "Tests/Test_ElementsPage.py::Test_ElementsPage::test_click_text_box[chrome]": true
+  "Tests/Test_ElementsPage.py::Test_ElementsPage::test_click_text_box[chrome]": true,
+  "Tests/Test_ElementsPage.py::Test_ElementsPage::test_elementstitle[chrome]": true
 }

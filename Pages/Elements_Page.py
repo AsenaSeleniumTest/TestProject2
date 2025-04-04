@@ -8,8 +8,15 @@ from Pages.BasePage import BasePage
 class ElementsPage(BasePage):
     """ Elements page class for the application """
     menu_list_elements = (By.XPATH,"//div[@class='element-list collapse show']//li//span[@class='text']")
-    
-    
+    textbox_name_element = (By.ID,"userName")
+    textbox_mail_element = (By.ID,"userEmail")
+    textbox_current_address_element = (By.ID,"currentAddress")
+    textbox_permanent_address_element = (By.ID,"permanentAddress")
+    textbox_submit_button_element = (By.ID,"submit")    
+
+
+
+
     def __init__(self, driver):
         super().__init__(driver)
 
@@ -24,7 +31,11 @@ class ElementsPage(BasePage):
             if element.text == "Text Box":
                 BasePage.click_element(self,element = element)
                 break  
-          
+
+    def type_full_name(self,text):
+        """ Type the full name """
+        BasePage.type_text(self,element = self.textbox_name_element,text = text)
+
     def click_check_box(self):
         """ Click on the check box """
         for element in self.menu_list_elements:

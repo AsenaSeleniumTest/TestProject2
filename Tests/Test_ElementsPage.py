@@ -8,9 +8,7 @@ from log_config import logger
 @pytest.mark.usefixtures("driver_Setup")
 class Test_ElementsPage():
     """Test Elements page elements"""
-    driver = None
-    mainp = None
-    elements_page = None
+   
    
 
     @pytest.mark.ElementsTitle
@@ -18,10 +16,11 @@ class Test_ElementsPage():
         self.driver = driver_Setup
         self.driver.get(TestData.url) 
         mainp = MainPage(self.driver)
+        mainp.scroll_to_footer()
         mainp.click_elements_page()
         logger.info("Browser opened ")
         assert self.driver.title == "DEMOQA"
-        
+         
         self.tear_down()
 
     @pytest.mark.ElementsMenu
@@ -32,8 +31,8 @@ class Test_ElementsPage():
         mainp = MainPage(self.driver)
         elements_page = ElementsPage(self.driver)
         logger.info(f"Clicking on elements menu: {mainp.__class__}")
+        mainp.scroll_to_footer()
         mainp.click_elements_page()
-        
         list_menu = elements_page.get_menu_list_elements()
         assert len(list_menu) == 9
         self.tear_down()
@@ -45,10 +44,19 @@ class Test_ElementsPage():
         mainp = MainPage(self.driver)
         elements_page = ElementsPage(self.driver)
         logger.info(f"Clicking on elements menu: {mainp.__class__}")
-        mainp.click_elements_page(self)
+        mainp.click_elements_page()
         elements_page.click_text_box()
         self.tear_down()
 
+    @pytest.mark.TextBoxArea
+    def test_text_box_form(self,driver_Setup):
+        """Test text box form for Text box fields"""
+        self.driver = driver_Setup 
+        mainp = MainPage(self.driver)
+        elements_page = ElementsPage(self.driver)
+        mainp.click_elements_page()
+        elements_page.click_text_box()
+        elements_page.type_full_name(TestData.full_name)
 
     def tear_down(self):
         self.driver.quit()    
