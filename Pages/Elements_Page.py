@@ -35,12 +35,15 @@ class ElementsPage(BasePage):
     def type_full_name(self,text):
         """ Type the full name """
         BasePage.type_text(self,element = self.textbox_name_element,text = text)
+    
     def type_email(self,text):
         """ Type the email """
         BasePage.type_text(self,element = self.textbox_mail_element,text = text)
+    
     def type_current_address(self,text):
         """ Type the current address """  
         BasePage.type_text(self,element = self.textbox_current_address_element,text=text)  
+    
     def type_permanent_address(self,text):
         """ Type the permanent address """
         BasePage.type_text(self,element = self.textbox_permanent_address_element,text=text)
