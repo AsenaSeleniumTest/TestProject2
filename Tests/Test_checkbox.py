@@ -26,7 +26,6 @@ class Test_CheckBoxPage():
     
         assert texto == "Check Box"
         
-        self.tear_down()
 
     @pytest.mark.ChecBoxDesktop
     def test_desktop_menu_present(self,driver_Setup):
@@ -39,4 +38,15 @@ class Test_CheckBoxPage():
         elements_page.click_check_box()
         checkBoxPage.click_expand_all()
         assert checkBoxPage.desktop_is_displayed() == True
-        self.tear_down()   
+         
+    @pytest.mark.CheckBoxDocuments
+    def test_documents_menu_present(self,driver_Setup):
+        self.driver = driver_Setup
+        self.driver.get(TestData.url)
+        mainp = MainPage(self.driver)
+        elements_page = ElementsPage(self.driver)
+        checkBoxPage= CheckBoxPage(self.driver)
+        mainp.click_elements_page()
+        elements_page.click_check_box()
+        checkBoxPage.click_expand_all()
+        assert checkBoxPage.documents_is_displayed() == True    

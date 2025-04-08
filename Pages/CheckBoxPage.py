@@ -33,3 +33,7 @@ class CheckBoxPage(BasePage):
     def desktop_is_displayed(self):
         """ Check if the desktop is displayed """
         return BasePage.element_status_displayed(self,element = self.check_box_desktop)   
+    
+    def documents_is_displayed(self):
+        """ Check if the documents is displayed """
+        return BasePage.element_status_displayed(self,element = self.check_box_documents)

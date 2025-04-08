@@ -8,5 +8,6 @@
   "Tests/Test_MainPage.py::Test_Main_Page::test_welcometitle",
   "Tests/Test_MainPage.py::Test_Main_Page::test_welcometitle[chrome]",
   "Tests/Test_checkbox.py::Test_CheckBoxPage::test_checkboxtitle",
-  "Tests/Test_checkbox.py::Test_CheckBoxPage::test_checkboxtitle[chrome]"
+  "Tests/Test_checkbox.py::Test_CheckBoxPage::test_checkboxtitle[chrome]",
+  "Tests/Test_checkbox.py::Test_CheckBoxPage::test_desktop_menu_present[chrome]"
 ]
