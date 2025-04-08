@@ -3,6 +3,7 @@ import pytest
 from Pages.BasePage import BasePage
 from Pages.MainPage import MainPage
 from log_config import logger
+from Configuration.TestData import TestData
 
 @pytest.mark.usefixtures("driver_Setup")
 class Test_Main_Page():
@@ -12,7 +13,9 @@ class Test_Main_Page():
     @pytest.mark.WelcomeTitle
     def test_welcometitle(self,driver_Setup):    
         self.driver = driver_Setup 
+        self.driver.get(TestData.url)
         bPage=BasePage(self.driver)
         mainp =MainPage(self.driver)
+    
         logger.info("Browser opened ")
-        assert mainp.title_displayed == True
+        assert self.driver.title == "DEMOQA"

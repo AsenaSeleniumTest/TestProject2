@@ -45,13 +45,14 @@ class Test_ElementsPage():
         elements_page = ElementsPage(self.driver)
         logger.info(f"Clicking on elements menu: {mainp.__class__}")
         mainp.click_elements_page()
-        elements_page.click_text_box()
+        elements_page.click_check_box()
         self.tear_down()
 
     @pytest.mark.TextBoxArea
     def test_text_box_form(self,driver_Setup):
         """Test text box form for Text box fields"""
         self.driver = driver_Setup 
+        self.driver.get(TestData.url)
         mainp = MainPage(self.driver)
         elements_page = ElementsPage(self.driver)
         mainp.click_elements_page()
@@ -59,8 +60,20 @@ class Test_ElementsPage():
         elements_page.type_full_name(TestData.full_name)
         elements_page.type_email(TestData.email)
         elements_page.type_current_address(TestData.current_address)
-        elements_page.type_permant_address(TestData.Permanent_address)
+        elements_page.type_permanent_address(TestData.Permanent_address)
+        elements_page.click_submit_form()
+        assert TestData.full_name == elements_page.get_submitted_name().text
 
+    def test_check_box_forms(self,driver_Setup):
+        """Test check box form for Text box fields"""
+        self.driver = driver_Setup 
+        self.driver.get(TestData.url)
+        mainp = MainPage(self.driver)
+        elements_page = ElementsPage(self.driver)
+        mainp.click_elements_page()
+        elements_page.click_check_box()
+        elements_page.click_check_box()
+        assert TestData.full_name == elements_page.get_submitted_name().text    
     def tear_down(self):
         self.driver.quit()    
         

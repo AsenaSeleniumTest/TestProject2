@@ -4,6 +4,9 @@
   "Tests/Test_ElementsPage.py::Test_ElementsPage::test_click_text_box[chrome]",
   "Tests/Test_ElementsPage.py::Test_ElementsPage::test_elementsmenu_count[chrome]",
   "Tests/Test_ElementsPage.py::Test_ElementsPage::test_elementstitle[chrome]",
+  "Tests/Test_ElementsPage.py::Test_ElementsPage::test_text_box_form[chrome]",
   "Tests/Test_MainPage.py::Test_Main_Page::test_welcometitle",
-  "Tests/Test_MainPage.py::Test_Main_Page::test_welcometitle[chrome]"
+  "Tests/Test_MainPage.py::Test_Main_Page::test_welcometitle[chrome]",
+  "Tests/Test_checkbox.py::Test_CheckBoxPage::test_checkboxtitle",
+  "Tests/Test_checkbox.py::Test_CheckBoxPage::test_checkboxtitle[chrome]"
 ]
