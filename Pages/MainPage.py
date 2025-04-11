@@ -10,18 +10,15 @@ from Pages.BasePage import BasePage
 class MainPage(BasePage):
     """ Main page class for the application """
     
-    
-    elements_link = (By.XPATH,"//h5[text()='Elements']")
-    forms_link = (By.XPATH,"//h5[text()='Forms']")
-    alerts_link = (By.XPATH,"//h5[text()='Alerts, Frame & Windows']")
-    widgets_link = (By.XPATH,"//h5[text()='Widgets']")
-    interactions_link = (By.XPATH,"//h5[text()='Interactions']")
-    book_store_link = (By.XPATH,"//h5[text()='Book Store Application']")
-    footer_element = (By.XPATH,"//footer")
-
-
     def __init__(self, driver):
         super().__init__(driver)
+        self.elements_link = (By.XPATH,"//h5[text()='Elements']")
+        self.forms_link = (By.XPATH,"//h5[text()='Forms']")
+        self.alerts_link = (By.XPATH,"//h5[text()='Alerts, Frame & Windows']")
+        self.widgets_link = (By.XPATH,"//h5[text()='Widgets']")
+        self.interactions_link = (By.XPATH,"//h5[text()='Interactions']")
+        self.book_store_link = (By.XPATH,"//h5[text()='Book Store Application']")
+        self.footer_element = (By.XPATH,"//footer")
 
     
     def click_elements_page(self):

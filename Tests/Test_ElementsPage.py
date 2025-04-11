@@ -3,6 +3,7 @@ import pytest
 from Pages.MainPage import MainPage
 from Pages.Elements_Page import ElementsPage
 from Configuration.TestData import TestData
+from Pages.CheckBoxPage import CheckBoxPage
 from log_config import logger
 
 @pytest.mark.usefixtures("driver_Setup")
@@ -70,10 +71,13 @@ class Test_ElementsPage():
         self.driver.get(TestData.url)
         mainp = MainPage(self.driver)
         elements_page = ElementsPage(self.driver)
+        checkBoxPage= CheckBoxPage(self.driver)
         mainp.click_elements_page()
         elements_page.click_check_box()
-        elements_page.click_check_box()
-        assert TestData.full_name == elements_page.get_submitted_name().text    
+        text = checkBoxPage.get_check_box_title().text
+        
+        assert text == "Check Box"    
+    
     def tear_down(self):
         self.driver.quit()    
         

@@ -1,5 +1,4 @@
 import pytest
-from Pages.BasePage import BasePage
 from Pages.MainPage import MainPage
 from Pages.Elements_Page import ElementsPage
 from Pages.CheckBoxPage import CheckBoxPage
@@ -14,8 +13,7 @@ class Test_CheckBoxPage():
     @pytest.mark.CheckBoxTitle
     def test_checkboxtitle(self,driver_Setup):    
         self.driver = driver_Setup 
-        self.driver.get(TestData.url)
-        bPage=BasePage(self.driver)
+        self.driver.get(TestData.url) 
         mainp =MainPage(self.driver)
         elements_page = ElementsPage(self.driver)
         checkBoxPage= CheckBoxPage(self.driver)
