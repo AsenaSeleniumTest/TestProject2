@@ -6,8 +6,6 @@ from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
 
-
-
 @pytest.fixture(autouse=True, params=["chrome"], scope="class")
 def driver_Setup(request):
     """ Setup the driver for the test """
@@ -23,6 +21,6 @@ def driver_Setup(request):
         driver = webdriver.Edge(service = service,options = options)
         driver.maximize_window()
     else:
-        raise Exception("Unsupported browser: {}".format(request.param))
+        raise Exception("Unsupported browser:"+format(request.param))
     yield driver
     driver.close()
