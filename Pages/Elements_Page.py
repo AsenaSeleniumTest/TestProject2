@@ -87,6 +87,6 @@ class ElementsPage(BasePage):
         """ Click on the submit form """
         BasePage.click_element(self,element = self.submit_form)     
 
-    def click_check_box(self):
+    def click_check_box_text(self):
         """ Click on the check box """
         BasePage.click_element(self,element = self.check_box_span)    

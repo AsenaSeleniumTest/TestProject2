@@ -73,11 +73,12 @@ class Test_ElementsPage():
         elements_page = ElementsPage(self.driver)
         checkBoxPage= CheckBoxPage(self.driver)
         mainp.click_elements_page()
-        elements_page.click_check_box()
+        elements_page.click_check_box_text()
         text = checkBoxPage.get_check_box_title().text
         
         assert text == "Check Box"    
     
     def tear_down(self):
+        """tear down the driver"""
         self.driver.quit()    
         

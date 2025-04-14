@@ -3,5 +3,7 @@
         "Tests"
     ],
     "python.testing.unittestEnabled": false,
-    "python.testing.pytestEnabled": true
+    "python.testing.pytestEnabled": true,
+    "python.testing.cwd": "${workspaceFolder}/Tests",
+    "python.envFile": "${workspaceFolder}/.env",
 }
