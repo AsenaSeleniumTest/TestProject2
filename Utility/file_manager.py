@@ -1,5 +1,6 @@
 import sys
 import os
+from os import strerror
 import logging
 
 
@@ -22,11 +23,46 @@ class File_Manager():
             if data_set in file_list:
                 print(f"trying to delete: {data_set}")
                 os.remove(self.directory+data_set)
+        except FileNotFoundError as ferror:       
+            return ferror
+        except PermissionError as exp:
+            logging.critical(f"Directory Permission denied : {exp.__str__}" )
+            return exp
+            
+        
+    def read_file(self,filename):
+        try:
+            with open(filename,'r',encoding=None) as file:
+                data = file.read()
+                return data
+        except FileNotFoundError as ferror:   
+            return ferror 
+          
+    
+    def write_file(self,filename,data):
+        try:
+            with open(filename,'w',encoding=None) as file:
+                file.write(data)
         except FileNotFoundError as ferror:   
             return ferror
         
-        
+    def append_to_file(self,filename,data):
+        try:
+            with open(filename,'a',encoding=None) as file:
+                file.write(data)
+        except FileNotFoundError as ferror:   
+            return ferror
+    def read_update_file(self,filename,data=""):
+        try:
+            with open(filename,'r+',encoding=None) as file:
+                file.write(data)
+        except FileNotFoundError as ferror:   
+            return ferror
+    def write_update_file(self,filename,data=""):
+        try:
+            with open(filename,'w+',encoding=None) as file:
+                file.write(data)
+        except FileNotFoundError as ferror:   
+            return ferror
     
-file = File_Manager("C:\\Users\\amigo\\OneDrive\\Documentos\\Linux back up\\testdir1\\")
-archivos_in = file.get_file_list()
-file.delete_duplicate_file(archivos_in)
+

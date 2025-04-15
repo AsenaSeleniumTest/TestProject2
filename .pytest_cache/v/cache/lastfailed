@@ -8,5 +8,9 @@
   "Tests/Test_checkbox.py::Test_CheckBoxPage::test_checkboxtitle": true,
   "Tests/Test_checkbox.py::Test_CheckBoxPage::test_checkboxtitle[chrome]": true,
   "Tests/Test_checkbox.py::Test_CheckBoxPage::test_desktop_menu_present[chrome]": true,
-  "Tests/Test_checkbox.py::Test_CheckBoxPage::test_documents_menu_present[chrome]": true
+  "Tests/Test_checkbox.py::Test_CheckBoxPage::test_documents_menu_present[chrome]": true,
+  "Tests/Test_checkbox.py::Test_CheckBoxPage::test_checkbox_checked[chrome]": true,
+  "Tests/Test_ElementsPage.py::Test_ElementsPage::test_home_checked[chrome]": true,
+  "Tests/Test_ElementsPage.py::Test_ElementsPage::test_check_box_forms[chrome]": true,
+  "Tests/Test_MainPage.py::Test_Main_Page::test_welcometitle[chrome]": true
 }

@@ -61,27 +61,27 @@ class ElementsPage(BasePage):
     def click_check_box(self):
         """ Click on the check box """
         for element in self.menu_list_elements:
-            if BasePage.get_element_text(self,element) == "Check Box":
+            if BasePage.get_element(self,element).text == "Check Box":
                 BasePage.click_element(self,element = element)
                 break      
 
     def click_radio_button(self):    
         """ Click on the radio button """
         for element in self.menu_list_elements:
-            if BasePage.get_element_text(self,element) == "Radio Button":
+            if BasePage.get_element(self,element).text == "Radio Button":
                 BasePage.click_element(self,element = element)
                 break    
 
     def click_web_tables(self):  
         """ Click on the web tables """
         for element in self.menu_list_elements:
-            if BasePage.get_element_text(self,element) == "Web Tables":
+            if BasePage.get_element(self,element).text == "Web Tables":
                 BasePage.click_element(self,element = element)
                 break      
 
     def get_submitted_name(self):
         """ Get the submitted name """
-        return BasePage.get_element_text(self,element = self.submit_name)            
+        return BasePage.get_element(self,element = self.submit_name)      
 
     def click_submit_form(self):
         """ Click on the submit form """

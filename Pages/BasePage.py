@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import selenium.webdriver as webdriver
-import logging as Logger
 import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
@@ -9,7 +8,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import ElementClickInterceptedException
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import ElementNotInteractableException
-
 from log_config import logger
 
 class BasePage:
@@ -72,7 +70,7 @@ class BasePage:
             logger.error("Error  element list not found  ", ex.__str__)
             return None
 
-    def get_element_text(self,element):
+    def get_element(self,element):
         """ Get the text of the element """
         try:
             logger.debug("Getting element text : ",element )
@@ -94,4 +92,7 @@ class BasePage:
             screenshot_path = f"error_screenshots/{self.timestamp}/{element}.png"
             self.driver.save_screenshot(screenshot_path)
             logger.error("Error  element not found for scroll  ", ex.__str__)
-            print("Element not found or took to much time to load : ",ex.__str__)    
+            print("Element not found or took to much time to load : ",ex.__str__)
+    
+    
+                 

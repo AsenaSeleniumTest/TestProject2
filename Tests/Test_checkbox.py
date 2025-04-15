@@ -51,3 +51,18 @@ class Test_CheckBoxPage():
         elements_page.click_check_box()
         check_Box_Page.click_expand_all()
         assert check_Box_Page.documents_is_displayed() is True    
+        
+    @pytest.mark.CheckboxChecked
+    def test_checkbox_checked(self,driver_Setup):
+        """Checks the check box is checked"""
+        self.driver = driver_Setup
+        self.driver.get(TestData.url)
+        mainp = MainPage(self.driver)
+        elements_page = ElementsPage(self.driver)
+        check_Box_Page= CheckBoxPage(self.driver)
+        mainp.click_elements_page()
+        elements_page.click_check_box_text()
+        check_Box_Page.click_expand_all()
+        checked,unchecked = check_Box_Page.home_is_checked()
+        assert checked == ["Home"]   
+        assert unchecked == ["Desktop","Documents"] 
