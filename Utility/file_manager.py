@@ -5,6 +5,7 @@ import logging
 
 
 class File_Manager():
+    """ Class to handle read and write operations on files """
     def __init__(self,directorypath):
         self.directory=directorypath
 
@@ -66,3 +67,13 @@ class File_Manager():
             return ferror
     
 
+fm = File_Manager
+data = fm.read_file(fm,filename = f"{os.curdir}\\Utility\\network1.txt")
+count = 0
+for car in range(len(data)):
+    #print(data[car],end="")
+    count +=1
+print(data)
+print(f"total caracters in file : {count}")
+    
+ 

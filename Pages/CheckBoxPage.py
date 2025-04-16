@@ -47,14 +47,15 @@ class CheckBoxPage(BasePage):
         """ Check if the home is checked """
         items_checked = []
         items_unchecked = []
-        if BasePage.element_status_displayed(self,element = self.check_box_home) == True:
+        if BasePage.element_status_displayed(self,element = self.check_box_home) is True:
             elem = BasePage.get_element_list(self,elements = self.check_box_check_element)
+            print("elements : ",elem)
             for el in elem:
-                clase = elem.get_attribute("class")
+                clase = el.get_property("className")
                 if "rct-icon rct-icon-check" in clase:
-                    items_checked.append(el.text)
+                    items_checked.append(el.get_property("className"))
                 else:
-                    items_unchecked.append(el.text)
+                    items_unchecked.append(el.get_property("className"))
             return items_checked, items_unchecked        
         else:
             raise ElementNotVisibleException(f"Element not found : {self.check_box_home}")   

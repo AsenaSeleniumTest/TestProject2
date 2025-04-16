@@ -14,7 +14,7 @@ def driver_Setup(request):
         service = Service(ChromeDriverManager().install())
         options = webdriver.ChromeOptions()
         driver = webdriver.Chrome(service = service,options = options)
-        driver.maximize_window()        
+        driver.maximize_window()       
     elif request.param == "edge":
         service = Service(EdgeChromiumDriverManager().install())
         options = webdriver.EdgeOptions()

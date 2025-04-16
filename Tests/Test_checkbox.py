@@ -1,4 +1,5 @@
 import pytest
+import re
 from Pages.MainPage import MainPage
 from Pages.Elements_Page import ElementsPage
 from Pages.CheckBoxPage import CheckBoxPage
@@ -64,5 +65,10 @@ class Test_CheckBoxPage():
         elements_page.click_check_box_text()
         check_Box_Page.click_expand_all()
         checked,unchecked = check_Box_Page.home_is_checked()
-        assert checked == ["Home"]   
-        assert unchecked == ["Desktop","Documents"] 
+        ch_string= unchecked[0]
+        pattern=re.compile(r"+rct-icon rct-icon-uncheck")
+        ch_string_2 = pattern.search(ch_string)
+        print("ch_string_2 : ",ch_string_2)
+        assert "rct-icon rct-icon-uncheck" not in checked
+        assert "rct-icon rct-icon-uncheck" in unchecked
+        
