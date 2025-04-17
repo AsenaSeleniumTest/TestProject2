@@ -28,6 +28,7 @@ class ElementsPage(BasePage):
         self.submit_permanent_address = (By.XPATH,"//p[@id='permanentAddress  ']")
         """Check box elements"""
         self.check_box_span = (By.XPATH,"//span[text()='Check Box']")
+        self.radio_button_span = (By.XPATH,"//span[text()='Radio Button']")
 
     def get_menu_list_elements(self):
         """ Get the list of elements on the webpage"""
@@ -89,4 +90,7 @@ class ElementsPage(BasePage):
 
     def click_check_box_text(self):
         """ Click on the check box """
-        BasePage.click_element(self,element = self.check_box_span)    
+        BasePage.click_element(self,element = self.check_box_span)
+    def click_radio_button_menu(self):
+        """ Click on the radio button """
+        BasePage.click_element(self,element = self.radio_button_span)  

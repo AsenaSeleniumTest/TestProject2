@@ -9,9 +9,13 @@
   "Tests/Test_ElementsPage.py::Test_ElementsPage::test_text_box_form[chrome]",
   "Tests/Test_MainPage.py::Test_Main_Page::test_welcometitle",
   "Tests/Test_MainPage.py::Test_Main_Page::test_welcometitle[chrome]",
+  "Tests/Test_checkbox.py::Test_CheckBoxPage::test_check_box_list[chrome]",
   "Tests/Test_checkbox.py::Test_CheckBoxPage::test_checkbox_checked[chrome]",
   "Tests/Test_checkbox.py::Test_CheckBoxPage::test_checkboxtitle",
   "Tests/Test_checkbox.py::Test_CheckBoxPage::test_checkboxtitle[chrome]",
   "Tests/Test_checkbox.py::Test_CheckBoxPage::test_desktop_menu_present[chrome]",
-  "Tests/Test_checkbox.py::Test_CheckBoxPage::test_documents_menu_present[chrome]"
+  "Tests/Test_checkbox.py::Test_CheckBoxPage::test_documents_menu_present[chrome]",
+  "Tests/Test_radioButton.py::Test_Radio_Button_Page::test_radio_button_impressive[chrome]",
+  "Tests/Test_radioButton.py::Test_Radio_Button_Page::test_radio_button_yes[chrome]",
+  "Tests/Test_radioButton.py::Test_Radio_Button_Page::test_radiobutton_title[chrome]"
 ]

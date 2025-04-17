@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
+import re
 import selenium.webdriver as webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import ElementNotVisibleException
-
-
 from Pages.BasePage import BasePage
 
 class CheckBoxPage(BasePage):
@@ -21,8 +20,9 @@ class CheckBoxPage(BasePage):
         self.check_box_desktop = (By.XPATH,"//span[text()='Desktop']")
         self.check_box_documents= (By.XPATH,"//span[text()='Documents']")
         self.check_box_downloads = (By.XPATH,"//div[@id='result']//span[@class='text-success']")
-        self.check_box_check_element = (By.XPATH,"//*[name()='svg' and @class='rct-icon rct-icon-uncheck']")
-
+        self.check_box_check_element = (By.XPATH,"//*[name()='svg' and @class='rct-icon rct-icon-check']")
+        self.text_checked_elements = (By.XPATH,"//div[@id='result']/span")
+        
     def get_check_box_title(self):
         """ Get the check box title """
         return BasePage.get_element(self,element = self.check_box_title)
@@ -52,12 +52,16 @@ class CheckBoxPage(BasePage):
             print("elements : ",elem)
             for el in elem:
                 clase = el.get_property("className")
-                if "rct-icon rct-icon-check" in clase:
+                cadena = re.search(r'\wcheck+', clase)
+                if cadena in clase:
                     items_checked.append(el.get_property("className"))
                 else:
                     items_unchecked.append(el.get_property("className"))
             return items_checked, items_unchecked        
         else:
             raise ElementNotVisibleException(f"Element not found : {self.check_box_home}")   
-        
+    
+    def get_checkbox_list(self):
+        """ Get the check box list """
+        return BasePage.get_element_list(self,elements = self.text_checked_elements)
              

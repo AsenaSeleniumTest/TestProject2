@@ -1,10 +1,11 @@
-import pytest
 import re
+import pytest
+from log_config import logger
 from Pages.MainPage import MainPage
 from Pages.Elements_Page import ElementsPage
 from Pages.CheckBoxPage import CheckBoxPage
 from Configuration.TestData import TestData
-from log_config import logger
+
 
 @pytest.mark.usefixtures("driver_Setup")
 class Test_CheckBoxPage():
@@ -64,11 +65,29 @@ class Test_CheckBoxPage():
         mainp.click_elements_page()
         elements_page.click_check_box_text()
         check_Box_Page.click_expand_all()
+        check_Box_Page.click_check_box_home()
         checked,unchecked = check_Box_Page.home_is_checked()
         ch_string= unchecked[0]
-        pattern=re.compile(r"+rct-icon rct-icon-uncheck")
-        ch_string_2 = pattern.search(ch_string)
+        ch_string_2 = self.split_string(ch_string)
         print("ch_string_2 : ",ch_string_2)
         assert "rct-icon rct-icon-uncheck" not in checked
         assert "rct-icon rct-icon-uncheck" in unchecked
-        
+    
+    @pytest.mark.CheckBoxCheckedList
+    def test_check_box_list(self,driver_Setup):
+        """Checks the check box list is displayed"""
+        self.driver = driver_Setup
+        self.driver.get(TestData.url)
+        mainp = MainPage(self.driver)
+        elements_page = ElementsPage(self.driver)
+        check_Box_Page= CheckBoxPage(self.driver)
+        mainp.click_elements_page()
+        elements_page.click_check_box_text()
+        check_Box_Page.click_expand_all()
+        check_Box_Page.click_check_box_home()
+        checked_list = check_Box_Page.get_checkbox_list()
+        assert len(checked_list) == 18
+    
+    def split_string(self,cadena):
+        """Splits a string into a list of strings"""
+        return re.search(r'\w+', cadena)    

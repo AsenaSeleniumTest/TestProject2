@@ -12,5 +12,8 @@
   "Tests/Test_checkbox.py::Test_CheckBoxPage::test_checkbox_checked[chrome]": true,
   "Tests/Test_ElementsPage.py::Test_ElementsPage::test_home_checked[chrome]": true,
   "Tests/Test_ElementsPage.py::Test_ElementsPage::test_check_box_forms[chrome]": true,
-  "Tests/Test_MainPage.py::Test_Main_Page::test_welcometitle[chrome]": true
+  "Tests/Test_MainPage.py::Test_Main_Page::test_welcometitle[chrome]": true,
+  "Tests/Test_checkbox.py::Test_CheckBoxPage::test_check_box_list[chrome]": true,
+  "Tests/Test_radioButton.py::Test_Radio_Button_Page::test_radiobutton_title[chrome]": true,
+  "Tests/Test_radioButton.py::Test_Radio_Button_Page::test_radio_button_yes[chrome]": true
 }
