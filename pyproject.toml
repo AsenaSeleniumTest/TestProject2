@@ -1,4 +1,3 @@
 [tool.pytest.ini_options]
 pythonpath = "."
-testpaths=["Tests","unittest"]
 markers = ["WelcomeTitle","CheckBoxDocuments","ChecBoxDesktop","CheckBoxTitle"]
