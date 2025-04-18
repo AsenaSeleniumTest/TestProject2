@@ -2,6 +2,7 @@
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
+from selenium.common.exceptions import WebDriverException
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
@@ -21,6 +22,6 @@ def driver_Setup(request):
         driver = webdriver.Edge(service = service,options = options)
         driver.maximize_window()
     else:
-        raise Exception("Unsupported browser:" + format(request.param))
+        raise WebDriverException("Unsupported browser:" + format(request.param))
     yield driver
     driver.close()
