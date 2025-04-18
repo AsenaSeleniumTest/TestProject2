@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4.2.2
       - name: pythonset up 
-        uses: actions/-python@v4.9.1
+        uses: actions/setup-python@v4.9.1
       - name: installing dependencies
         run: |
           python -m pip install --upgrade pip
