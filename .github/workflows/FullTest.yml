@@ -16,7 +16,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: execute tests
-      - run: cd ..
       - run: pytest
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
