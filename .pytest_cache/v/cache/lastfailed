@@ -15,5 +15,6 @@
   "Tests/Test_MainPage.py::Test_Main_Page::test_welcometitle[chrome]": true,
   "Tests/Test_checkbox.py::Test_CheckBoxPage::test_check_box_list[chrome]": true,
   "Tests/Test_radioButton.py::Test_Radio_Button_Page::test_radiobutton_title[chrome]": true,
-  "Tests/Test_radioButton.py::Test_Radio_Button_Page::test_radio_button_yes[chrome]": true
+  "Tests/Test_radioButton.py::Test_Radio_Button_Page::test_radio_button_yes[chrome]": true,
+  "unittest/test_filemanager.py::test_readfile": true
 }

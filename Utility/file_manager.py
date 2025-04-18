@@ -32,48 +32,58 @@ class File_Manager():
             
         
     def read_file(self,filename):
+        """ Read file content"""
         try:
-            with open(filename,'r',encoding=None) as file:
-                data = file.read()
-                return data
+            with open(filename,'r',encoding="UTF-8") as file:
+                data1 = file.read()
+                return data1
         except FileNotFoundError as ferror:   
             return ferror 
-          
+    def read_file_per_line(self,filename):
+        """ Read file content line by line """
+        try:
+            with open(filename,'r',encoding="UTF-8") as file:
+                data1 = file.readlines()
+                return data1
+        except FileNotFoundError as ferror:   
+            return ferror      
     
     def write_file(self,filename,data):
+        """ Write data to file """
         try:
-            with open(filename,'w',encoding=None) as file:
+            with open(filename,'w',encoding="UTF-8") as file:
                 file.write(data)
         except FileNotFoundError as ferror:   
             return ferror
         
     def append_to_file(self,filename,data):
+        """Append data to existing file"""
         try:
-            with open(filename,'a',encoding=None) as file:
+            with open(filename,'a',encoding="UTF-8") as file:
                 file.write(data)
         except FileNotFoundError as ferror:   
             return ferror
     def read_update_file(self,filename,data=""):
         try:
-            with open(filename,'r+',encoding=None) as file:
+            with open(filename,'r+',encoding="UTF-8") as file:
                 file.write(data)
         except FileNotFoundError as ferror:   
             return ferror
     def write_update_file(self,filename,data=""):
         try:
-            with open(filename,'w+',encoding=None) as file:
+            with open(filename,'w+',encoding="UTF-8") as file:
                 file.write(data)
         except FileNotFoundError as ferror:   
             return ferror
     
 
-fm = File_Manager
-data = fm.read_file(fm,filename = f"{os.curdir}\\Utility\\network1.txt")
+"""fm = File_Manager
+data = fm.read_file_per_line(fm,filename = f"{os.curdir}\\Utility\\network1.txt")
 count = 0
 for car in range(len(data)):
     #print(data[car],end="")
     count +=1
-print(data)
+print(len(data))
 print(f"total caracters in file : {count}")
-    
+    """
  
