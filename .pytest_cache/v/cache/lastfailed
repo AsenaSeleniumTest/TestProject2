@@ -20,5 +20,6 @@
   "Tests/Test_web_table_page.py::Test_WebTablePage::test_webtable_headers[chrome]": true,
   "Tests/Test_web_table_page.py::Test_WebTablePage::test_webtable_data[chrome]": true,
   "Tests/Test_MainPage.py::Test_Main_Page::test_welcometitle[chrome]": true,
-  "Tests/Test_web_table_page.py::Test_WebTablePage::test_add_record_to_webtable[chrome]": true
+  "Tests/Test_web_table_page.py::Test_WebTablePage::test_add_record_to_webtable[chrome]": true,
+  "Tests/Test_selectPage.py::Test_Select_Page::test_select_option_1[chrome]": true
 }

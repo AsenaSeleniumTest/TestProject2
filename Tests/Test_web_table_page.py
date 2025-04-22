@@ -63,10 +63,13 @@ class Test_WebTablePage():
         wt_page.click_submit_form()
         data_list = wt_page.get_data_elements()
         clean_data_list = []
+        found_person = ""
         for data in data_list:
             if data.text != " ":
                 clean_data_list.append(data.text)
-        assert "Jhon" in clean_data_list        
+            elif data.text == "Jhon":
+                found_person = data.text    
+        assert "Jhon" == found_person
         
         
           
