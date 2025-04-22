@@ -18,7 +18,7 @@ class MainPage(BasePage):
         self.widgets_link = (By.XPATH,"//h5[text()='Widgets']")
         self.interactions_link = (By.XPATH,"//h5[text()='Interactions']")
         self.book_store_link = (By.XPATH,"//h5[text()='Book Store Application']")
-        self.footer_element = (By.XPATH,"//footer")
+        self.footer_element = (By.XPATH,"//div[text()='Book Store Application']")
 
     
     def click_elements_page(self):

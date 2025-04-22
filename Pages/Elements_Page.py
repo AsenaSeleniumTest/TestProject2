@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
-import selenium.webdriver as webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from Pages.BasePage import BasePage
 
 class ElementsPage(BasePage):
@@ -29,6 +26,7 @@ class ElementsPage(BasePage):
         """Check box elements"""
         self.check_box_span = (By.XPATH,"//span[text()='Check Box']")
         self.radio_button_span = (By.XPATH,"//span[text()='Radio Button']")
+        self.web_tables_span = (By.XPATH,"//span[text()='Web Tables']")
 
     def get_menu_list_elements(self):
         """ Get the list of elements on the webpage"""
@@ -93,4 +91,8 @@ class ElementsPage(BasePage):
         BasePage.click_element(self,element = self.check_box_span)
     def click_radio_button_menu(self):
         """ Click on the radio button """
-        BasePage.click_element(self,element = self.radio_button_span)  
+        BasePage.click_element(self,element = self.radio_button_span)
+    
+    def click_web_tables_menu(self):  
+        """ Click on the web tables """
+        BasePage.click_element(self,element = self.web_tables_span)    

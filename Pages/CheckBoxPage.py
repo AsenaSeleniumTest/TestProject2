@@ -59,7 +59,7 @@ class CheckBoxPage(BasePage):
                     items_unchecked.append(el.get_property("className"))
             return items_checked, items_unchecked        
         else:
-            raise ElementNotVisibleException(f"Element not found : {self.check_box_home}")   
+            raise ElementNotVisibleException(f"Element not found : {self.check_box_home}")  
     
     def get_checkbox_list(self):
         """ Get the check box list """

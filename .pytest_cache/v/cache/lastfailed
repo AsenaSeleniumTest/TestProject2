@@ -11,5 +11,14 @@
   "Tests/Test_checkbox.py::Test_CheckBoxPage::test_documents_menu_present[chrome]": true,
   "Tests/Test_checkbox.py::Test_CheckBoxPage::test_checkbox_checked[chrome]": true,
   "Tests/Test_ElementsPage.py::Test_ElementsPage::test_home_checked[chrome]": true,
-  "unittest/test_filemanager.py::test_readfile": true
+  "unittest/test_filemanager.py::test_readfile": true,
+  "Tests/Test_ElementsPage.py::Test_ElementsPage::test_check_box_forms[chrome]": true,
+  "Tests/Test_checkbox.py::Test_CheckBoxPage::test_check_box_list[chrome]": true,
+  "Tests/Test_radioButton.py::Test_Radio_Button_Page::test_radiobutton_title[chrome]": true,
+  "Tests/Test_radioButton.py::Test_Radio_Button_Page::test_radio_button_yes[chrome]": true,
+  "Tests/Test_radioButton.py::Test_Radio_Button_Page::test_radio_button_impressive[chrome]": true,
+  "Tests/Test_web_table_page.py::Test_WebTablePage::test_webtable_headers[chrome]": true,
+  "Tests/Test_web_table_page.py::Test_WebTablePage::test_webtable_data[chrome]": true,
+  "Tests/Test_MainPage.py::Test_Main_Page::test_welcometitle[chrome]": true,
+  "Tests/Test_web_table_page.py::Test_WebTablePage::test_add_record_to_webtable[chrome]": true
 }

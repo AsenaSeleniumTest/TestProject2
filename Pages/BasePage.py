@@ -83,7 +83,7 @@ class BasePage:
     def scroll_to_element(self,element):
         """ Scroll to the element """ 
         try:
-            logger.debug(f"Scrolling to element : {element} ")
+            logger.debug("Scrolling to element : %s", element)
             self.wait.until(EC.visibility_of_element_located(element))
             self.action.move_to_element(self.driver.find_element(element)).perform()
             #self.driver.execute_script("arguments[0].scrollIntoView();", element)

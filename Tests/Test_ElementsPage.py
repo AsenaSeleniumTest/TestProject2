@@ -9,14 +9,15 @@ from Configuration.TestData import TestData
 @pytest.mark.usefixtures("driver_Setup")
 class Test_ElementsPage():
     """Test Elements page elements"""
-      
+    
+        
     @pytest.mark.ElementsTitle
     def test_elementstitle(self,driver_Setup):  
         self.driver = driver_Setup
         self.driver.get(TestData.url)
         mainp = MainPage(self.driver)
-        mainp.scroll_to_footer()
         mainp.click_elements_page()
+        #mainp.scroll_to_footer()
         logger.info("Browser opened ")
         assert self.driver.title == "DEMOQA"
          
@@ -29,23 +30,22 @@ class Test_ElementsPage():
         self.driver.get(TestData.url)
         mainp = MainPage(self.driver)
         elements_page = ElementsPage(self.driver)
-        logger.info(f"Clicking on elements menu: {mainp.__class__}")
-        mainp.scroll_to_footer()
+        logger.info("Clicking on elements menu: %s", mainp.__class__)
+        #mainp.scroll_to_footer()
         mainp.click_elements_page()
         list_menu = elements_page.get_menu_list_elements()
         assert len(list_menu) == 9
-        self.tear_down()
+        
 
     @pytest.mark.ElementsMenu  
     def test_click_text_box(self,driver_Setup):   
         """Test Elements page elements"""     
-        self.driver = driver_Setup 
+        self.driver = driver_Setup
         mainp = MainPage(self.driver)
-        elements_page = ElementsPage(self.driver)
-        logger.info(f"Clicking on elements menu: {mainp.__class__}")
+        elements_page = ElementsPage(self.driver)        
         mainp.click_elements_page()
-        elements_page.click_check_box()
-        self.tear_down()
+        elements_page.click_check_box_text()
+        
 
     @pytest.mark.TextBoxArea
     def test_text_box_form(self,driver_Setup):
@@ -89,7 +89,7 @@ class Test_ElementsPage():
         elements_page.click_check_box_text()
         checkBoxPage.click_expand_all()
         checkBoxPage.click_check_box_home()
-        assert checkBoxPage.home_is_checked() == True
+        assert checkBoxPage.home_is_checked() is True
     
     def tear_down(self):
         """tear down the driver"""

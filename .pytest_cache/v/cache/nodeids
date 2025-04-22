@@ -17,5 +17,8 @@
   "Tests/Test_checkbox.py::Test_CheckBoxPage::test_documents_menu_present[chrome]",
   "Tests/Test_radioButton.py::Test_Radio_Button_Page::test_radio_button_impressive[chrome]",
   "Tests/Test_radioButton.py::Test_Radio_Button_Page::test_radio_button_yes[chrome]",
-  "Tests/Test_radioButton.py::Test_Radio_Button_Page::test_radiobutton_title[chrome]"
+  "Tests/Test_radioButton.py::Test_Radio_Button_Page::test_radiobutton_title[chrome]",
+  "Tests/Test_web_table_page.py::Test_WebTablePage::test_add_record_to_webtable[chrome]",
+  "Tests/Test_web_table_page.py::Test_WebTablePage::test_webtable_data[chrome]",
+  "Tests/Test_web_table_page.py::Test_WebTablePage::test_webtabletitle[chrome]"
 ]
