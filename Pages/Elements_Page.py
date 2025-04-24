@@ -27,6 +27,7 @@ class ElementsPage(BasePage):
         self.check_box_span = (By.XPATH,"//span[text()='Check Box']")
         self.radio_button_span = (By.XPATH,"//span[text()='Radio Button']")
         self.web_tables_span = (By.XPATH,"//span[text()='Web Tables']")
+        self.alert_frame_window = (By.XPATH,"//span[text()='Alerts, Frame & Windows']")
 
     def get_menu_list_elements(self):
         """ Get the list of elements on the webpage"""
@@ -80,11 +81,11 @@ class ElementsPage(BasePage):
 
     def get_submitted_name(self):
         """ Get the submitted name """
-        return BasePage.get_element(self,element = self.submit_name)      
+        return BasePage.get_element(self,element = self.submit_name)
 
     def click_submit_form(self):
         """ Click on the submit form """
-        BasePage.click_element(self,element = self.submit_form)     
+        BasePage.click_element(self,element = self.submit_form)
 
     def click_check_box_text(self):
         """ Click on the check box """
@@ -95,4 +96,8 @@ class ElementsPage(BasePage):
     
     def click_web_tables_menu(self):  
         """ Click on the web tables """
-        BasePage.click_element(self,element = self.web_tables_span)    
+        BasePage.click_element(self,element = self.web_tables_span)
+    
+    def click_alert_frame_window_menu(self):
+        """click menu for Alert, Frame and windows"""
+        BasePage.click_element(self,element = self.alert_frame_window)

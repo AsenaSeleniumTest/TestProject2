@@ -84,8 +84,8 @@ class BasePage:
         """ Scroll to the element """ 
         try:
             logger.debug("Scrolling to element : %s", element)
-            self.wait.until(EC.visibility_of_element_located(element))
-            self.action.move_to_element(self.driver.find_element(element)).perform()
+            self.wait.until(EC.presence_of_element_located(element))
+            self.action.scroll_to_element(self.driver.find_element(element)).perform()
             #self.driver.execute_script("arguments[0].scrollIntoView();", element)
         except NoSuchElementException as ex:
             screenshot_path = f"error_screenshots/{self.timestamp}/{element}.png"

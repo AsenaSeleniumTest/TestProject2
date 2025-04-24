@@ -12,3 +12,6 @@ class WidgetPage(BasePage):
         """function to click select menu"""
         BasePage.click_element(self,element = self.select_menu_element)
         
+    def scroll_menu(self):
+        """scrolling menu""" 
+        BasePage.scroll_to_element(self,element = self.select_menu_element) 
