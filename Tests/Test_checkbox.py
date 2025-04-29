@@ -67,12 +67,10 @@ class Test_CheckBoxPage():
         check_Box_Page.click_expand_all()
         check_Box_Page.click_check_box_home()
         checked,unchecked = check_Box_Page.home_is_checked()
-        ch_string= unchecked[0]
-        ch_string_2 = self.split_string(ch_string)
-        print("ch_string_2 : ",ch_string_2)
-        assert "rct-icon rct-icon-uncheck" not in checked
-        assert "rct-icon rct-icon-uncheck" in unchecked
-    
+        ch_string= checked[0]
+        assert "home" in checked
+        assert len(unchecked) is 0
+     
     @pytest.mark.CheckBoxCheckedList
     def test_check_box_list(self,driver_Setup):
         """Checks the check box list is displayed"""

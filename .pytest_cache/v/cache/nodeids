@@ -21,5 +21,7 @@
   "Tests/Test_selectPage.py::Test_Select_Page::test_select_option_1[chrome]",
   "Tests/Test_web_table_page.py::Test_WebTablePage::test_add_record_to_webtable[chrome]",
   "Tests/Test_web_table_page.py::Test_WebTablePage::test_webtable_data[chrome]",
-  "Tests/Test_web_table_page.py::Test_WebTablePage::test_webtabletitle[chrome]"
+  "Tests/Test_web_table_page.py::Test_WebTablePage::test_webtabletitle[chrome]",
+  "Tests/test_frames_page.py::Test_frames_page::test_frame_count[chrome]",
+  "Tests/test_frames_page.py::Test_frames_page::test_frame_switch[chrome]"
 ]

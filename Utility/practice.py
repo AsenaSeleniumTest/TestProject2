@@ -18,3 +18,11 @@ dict1={"100":"tigre", "20":"gato", "150":"Jaguar", "86":"lince", "34":"puma","10
 print(dict1)
 for i in dict1.items():
     print(i[1],sep=" : ",end="",)
+others = 0
+for i in range(2):
+    for j in range(2):
+        if i != j:
+            others += 1
+else:
+    others += 1
+print(others)                    

@@ -10,8 +10,6 @@ from Pages.BasePage import BasePage
 class CheckBoxPage(BasePage):
     """ Check box page class for the application """
     
-   
-
     def __init__(self, driver):
         super().__init__(driver)
         self.check_box_title = (By.XPATH,"//h1[text()='Check Box']")
@@ -22,6 +20,7 @@ class CheckBoxPage(BasePage):
         self.check_box_downloads = (By.XPATH,"//div[@id='result']//span[@class='text-success']")
         self.check_box_check_element = (By.XPATH,"//*[name()='svg' and @class='rct-icon rct-icon-check']")
         self.text_checked_elements = (By.XPATH,"//div[@id='result']/span")
+        self.checkbox_list = (By.CSS_SELECTOR,"input[type='checkbox']")
         
     def get_check_box_title(self):
         """ Get the check box title """
@@ -33,7 +32,7 @@ class CheckBoxPage(BasePage):
     
     def desktop_is_displayed(self):
         """ Check if the desktop is displayed """
-        return BasePage.element_status_displayed(self,element = self.check_box_desktop) 
+        return BasePage.element_status_displayed(self,element = self.check_box_desktop)
     
     def documents_is_displayed(self):
         """ Check if the documents is displayed """
@@ -48,16 +47,14 @@ class CheckBoxPage(BasePage):
         items_checked = []
         items_unchecked = []
         if BasePage.element_status_displayed(self,element = self.check_box_home) is True:
-            elem = BasePage.get_element_list(self,elements = self.check_box_check_element)
+            elem = BasePage.get_element_list2(self,elements = self.checkbox_list)
             print("elements : ",elem)
             for el in elem:
-                clase = el.get_property("className")
-                cadena = re.search(r'\wcheck+', clase)
-                if cadena in clase:
-                    items_checked.append(el.get_property("className"))
+                if el.is_selected():
+                    items_checked.append(el.get_property("id"))
                 else:
                     items_unchecked.append(el.get_property("className"))
-            return items_checked, items_unchecked        
+            return items_checked, items_unchecked
         else:
             raise ElementNotVisibleException(f"Element not found : {self.check_box_home}")
     
