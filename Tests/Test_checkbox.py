@@ -86,6 +86,4 @@ class Test_CheckBoxPage():
         checked_list = check_Box_Page.get_checkbox_list()
         assert len(checked_list) == 18
     
-    def split_string(self,cadena):
-        """Splits a string into a list of strings"""
-        return re.search(r'\w+', cadena)    
+       

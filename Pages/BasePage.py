@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import ElementClickInterceptedException
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import ElementNotInteractableException
-from Tests.log_config import logger
+
 
 class BasePage:
     """ Base page for Page Object Model"""
@@ -32,7 +32,9 @@ class BasePage:
         try:
             self.wait.until(EC.alert_is_present())
             alert = self.driver.switch_to.alert
+            texto = alert.text
             alert.accept()
+            return texto
         except NoSuchElementException as ex:
             screenshot_path = f"error_screenshots/{self.timestamp}/alert.png"
             self.driver.save_screenshot(screenshot_path)
@@ -61,6 +63,18 @@ class BasePage:
         alert.accept()
         return texto
     
+    def cancel_alert(self):
+        """Method to cance an alert on the webpage"""
+        try:
+            self.wait.until(EC.alert_is_present())
+            alert = self.driver.switch_to.alert
+            alert.dismiss()
+        except NotImplementedError as ex:
+            screenshot_path = f"error_screenshots/{self.timestamp}/alert.png"
+            self.driver.save_screenshot(screenshot_path)
+            print("Alert not found or took too much time to load : ",ex)
+            return ex
+        
     def click_element(self,element):
         """Method to click elements on the webpage"""
         try:
@@ -122,6 +136,3 @@ class BasePage:
             screenshot_path = f"error_screenshots/{self.timestamp}/{element}.png"
             self.driver.save_screenshot(screenshot_path)
             print("Element not found or took to much time to load : ",ex.__str__)
-    
-    
-                 
