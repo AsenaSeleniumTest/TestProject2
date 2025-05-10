@@ -1,17 +1,13 @@
 #!/usr/bin/env python3
-import selenium.webdriver as webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import ElementClickInterceptedException
-from selenium.common.exceptions import NoSuchElementException
 from Pages.BasePage import BasePage
 
 class MainPage(BasePage):
     """ Main page class for the application """
     
     def __init__(self, driver):
-        super().__init__(driver)
+        BasePage.__init__(self,driver)
         self.elements_link = (By.XPATH,"//h5[text()='Elements']")
         self.forms_link = (By.XPATH,"//h5[text()='Forms']")
         self.alerts_link = (By.XPATH,"//h5[text()='Alerts, Frame & Windows']")
@@ -27,11 +23,11 @@ class MainPage(BasePage):
 
     def click_forms_page(self):
         """ Click on the element """
-        BasePage.click_element(self,element =self.forms_link)   
+        BasePage.click_element(self,element =self.forms_link)
 
     def click_alerts_page(self):
         """ Click on the element """
-        BasePage.click_element(self,element = self.alerts_link)     
+        BasePage.click_element(self,element = self.alerts_link)
 
     def click_widgets_page(self):
         """ Click on the element """

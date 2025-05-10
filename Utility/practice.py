@@ -1,13 +1,7 @@
-import sys
+from google import genai                 
+from google.genai.types import HttpOptions
 
-a =[1,3,8,9,5,"7",4,2,6]
-b = [1,2,3,4,5,6,7,8,9]
-print(a)      
-a.extend(b) # a = a + b  
-a.pop()
-print(a)  
-print(a.index(5)) # 2      
-print(sys.getsizeof(a)) # 104
-c = a
-print(id(a))
-print(id(c)) # 140706803200064
+client = genai.Client(http_options=HttpOptions(api_version="v1"))
+response = client.models.generate_content(model="gemini-2.0-flash-001",contents="How do I configure appium in python for mobile testing?",)
+
+print(response.text)

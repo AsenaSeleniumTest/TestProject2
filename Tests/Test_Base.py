@@ -12,10 +12,12 @@ class Test_Base:
 
     Returns:
         _type_: _description_
+        pytest --html='report3.html' -v -s -n 2   to run the tests in parallel with 2 workers
+        and  html report generated
     """
     driver = None
     HOME_URL="https://demoqa.com/"
-    @pytest.fixture(scope='class',autouse=True,params=["chrome"]) 
+    @pytest.fixture(scope='class',autouse=True,params=["chrome"])
     def setup(self,request):
         """_summary_: set up driver to run tests
         """

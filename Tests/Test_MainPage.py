@@ -2,7 +2,6 @@
 import pytest
 from Pages.BasePage import BasePage
 from Pages.MainPage import MainPage
-from log_config import logger
 from Configuration.TestData import TestData
 
 @pytest.mark.usefixtures("driver_Setup")
@@ -17,5 +16,5 @@ class Test_Main_Page():
         bPage=BasePage(self.driver)
         mainp =MainPage(self.driver)
     
-        logger.info("Browser opened ")
+        
         assert self.driver.title == "DEMOQA"

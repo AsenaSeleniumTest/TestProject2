@@ -1,6 +1,5 @@
 import re
 import pytest
-from log_config import logger
 from Pages.MainPage import MainPage
 from Pages.Elements_Page import ElementsPage
 from Pages.CheckBoxPage import CheckBoxPage
@@ -24,7 +23,6 @@ class Test_CheckBoxPage():
         elements_page.click_check_box()
         checkBoxPage.click_expand_all()
         texto = checkBoxPage.get_check_box_title().text
-        logger.info(f"Check Box title is {texto}")
         assert texto == "Check Box"
         
 
@@ -67,12 +65,10 @@ class Test_CheckBoxPage():
         check_Box_Page.click_expand_all()
         check_Box_Page.click_check_box_home()
         checked,unchecked = check_Box_Page.home_is_checked()
-        ch_string= unchecked[0]
-        ch_string_2 = self.split_string(ch_string)
-        print("ch_string_2 : ",ch_string_2)
-        assert "rct-icon rct-icon-uncheck" not in checked
-        assert "rct-icon rct-icon-uncheck" in unchecked
-    
+        ch_string= checked[0]
+        assert "home" in checked
+        assert len(unchecked) is 0
+     
     @pytest.mark.CheckBoxCheckedList
     def test_check_box_list(self,driver_Setup):
         """Checks the check box list is displayed"""
@@ -88,6 +84,4 @@ class Test_CheckBoxPage():
         checked_list = check_Box_Page.get_checkbox_list()
         assert len(checked_list) == 18
     
-    def split_string(self,cadena):
-        """Splits a string into a list of strings"""
-        return re.search(r'\w+', cadena)    
+       

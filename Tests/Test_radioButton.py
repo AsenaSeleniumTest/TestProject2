@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import pytest
-from log_config import logger
 from Pages.MainPage import MainPage
 from Pages.Elements_Page import ElementsPage
 from Pages.RadioButtonPage import Radio_Button_Page
