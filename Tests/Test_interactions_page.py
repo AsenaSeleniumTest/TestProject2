@@ -19,6 +19,7 @@ class Test_interactions_page():
         mainp.click_interactions_page()
         i_page.click_sortable_menu()
         sortable_text = i_page.get_sortable_header().text
+        
         assert sortable_text == "Sortable"
         assert "Sortable" in driver.page_source
         
@@ -31,8 +32,9 @@ class Test_interactions_page():
         i_page = InteractionsPage(driver)
         mainp.click_interactions_page()
         i_page.click_sortable_menu()
-        i_page.drag_one_to_three()
         assert "Sortable" in driver.page_source
+        i_page.drag_one_to_three()
+        
     
     @pytest.mark.draggable_list
     def test_get_sortable_list(self,driver_Setup):
@@ -42,6 +44,17 @@ class Test_interactions_page():
         mainp = MainPage(driver)
         i_page = InteractionsPage(driver)
         mainp.click_interactions_page()
-        i_page.click_sortable_menu()    
+        i_page.click_sortable_menu()
         sortable_list = i_page.get_sortable_list()
         assert len(sortable_list) == 6
+        
+    @pytest.mark.sortable_javascriptExecutor
+    def test_javascript_executor(self, driver_Setup):
+        """Test to validate the javascript executor"""
+        driver = driver_Setup
+        driver.get(TestData.url)
+        mainp = MainPage(driver)
+        i_page = InteractionsPage(driver)
+        mainp.click_interactions_page()
+        i_page.click_sortable_menu()
+        driver.execute_script(TestData.SCROLL_FULL_HEIGTH)

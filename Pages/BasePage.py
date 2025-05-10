@@ -96,7 +96,7 @@ class BasePage:
     def type_text(self,element,text):
         """Method to typetext on elements webpage"""
         try:
-            self.wait.until(EC.visibility_of_element_located(element)).send_keys(text)        
+            self.wait.until(EC.visibility_of_element_located(element)).send_keys(text)      
         except ElementNotInteractableException as ex:  
             screenshot_path = f"error_screenshots/{self.timestamp}/{element}.png"
             self.driver.save_screenshot(screenshot_path)

@@ -20,6 +20,7 @@
   "Tests/Test_interactions_page.py::Test_interactions_page::test_get_sortable_list[chrome]",
   "Tests/Test_interactions_page.py::Test_interactions_page::test_get_sortable_list[edge]",
   "Tests/Test_interactions_page.py::Test_interactions_page::test_interactions[chrome]",
+  "Tests/Test_interactions_page.py::Test_interactions_page::test_javascript_executor[edge]",
   "Tests/Test_radioButton.py::Test_Radio_Button_Page::test_radio_button_impressive[chrome]",
   "Tests/Test_radioButton.py::Test_Radio_Button_Page::test_radio_button_yes[chrome]",
   "Tests/Test_radioButton.py::Test_Radio_Button_Page::test_radiobutton_title[chrome]",

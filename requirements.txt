@@ -5,4 +5,7 @@ Appium-Python-Client
 pytest-xdist
 pytest-html
 behave
+requests
+python-dotenv
+pyodbc
 
