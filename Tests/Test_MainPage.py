@@ -10,7 +10,7 @@ class Test_Main_Page():
     driver = None
 
     @pytest.mark.WelcomeTitle
-    def test_welcometitle(self,driver_Setup):    
+    def test_welcometitle(self,driver_Setup):
         self.driver = driver_Setup 
         self.driver.get(TestData.url)
         bPage=BasePage(self.driver)

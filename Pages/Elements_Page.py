@@ -63,14 +63,14 @@ class ElementsPage(BasePage):
         for element in self.menu_list_elements:
             if BasePage.get_element(self,element).text == "Check Box":
                 BasePage.click_element(self,element = element)
-                break      
+                break
 
     def click_radio_button(self):    
         """ Click on the radio button """
         for element in self.menu_list_elements:
             if BasePage.get_element(self,element).text == "Radio Button":
                 BasePage.click_element(self,element = element)
-                break    
+                break
 
     def click_web_tables(self):  
         """ Click on the web tables """
