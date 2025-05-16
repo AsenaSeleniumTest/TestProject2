@@ -8,7 +8,7 @@ def get_debug_logger_():
     """Get the logger configuration"""
     path = 'Logs/testlogs/test_log.log'
     d_logger = Logger.getLogger(__name__)
-    d_logger.setLevel(Logger.DEBUG)
+    d_logger.setLevel(Logger.INFO)
     d_formater = Logger.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
     d_handler = Logger.FileHandler(path)
     d_handler.setFormatter(d_formater)

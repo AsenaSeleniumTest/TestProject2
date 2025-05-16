@@ -21,11 +21,11 @@ class IFramePage(BasePage):
     
     def get_frame_list(self):
         """get all frame list"""
-        return BasePage.get_element_list(self, elements = self.frame_list)
+        return self.get_element_list(self.frame_list)
     
     def get_frame(self,text):
         """get frame"""
-        return BasePage.get_element(self, element = (By.XPATH,f"//iframe[@id='{text}']"))
+        return self.get_element(element = (By.XPATH,f"//iframe[@id='{text}']"))
         
     def go_to_iframe(self,frame):
         """function to switch to the element frame"""
@@ -40,30 +40,30 @@ class IFramePage(BasePage):
         
     def click_frame_menu(self):
         """click frame from left menu"""
-        BasePage.click_element(self, element = self.frame_menu)
+        self.click_element(self.frame_menu)
     
     def click_alerts_menu(self):
         """click alerts page from left menu"""
-        BasePage.click_element(self, element = self.alerts_page)
+        self.click_element(self.alerts_page)
     
     def click_alert_button1(self):
         """click alert button"""
-        BasePage.click_element(self, element = self.alert_button1)
+        self.click_element(self.alert_button1)
     
     def click_alert_button2(self):
         """click alert button"""
-        BasePage.click_element(self, element = self.timer_alert_button)
+        self.click_element(self.timer_alert_button)
     
     def click_alert_button3(self):
         """click alert button"""
-        BasePage.click_element(self, element = self.confirm_alert_button)
+        self.click_element(self.confirm_alert_button)
         
     def click_alert_button4(self):
         """click alert button"""
-        BasePage.click_element(self, element = self.prompt_alert_button)
+        self.click_element(self.prompt_alert_button)
     def dismiss_alert(self):
         """function to dismiss alert"""
-        BasePage.cancel_alert(self)
+        self.cancel_alert()
     def alert_dismiss_message(self):
         """function to get alert message"""
-        return BasePage.get_element(self, element = self.confirm_alert_emessage)
+        return self.get_element(self.confirm_alert_emessage)

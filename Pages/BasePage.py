@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import ElementClickInterceptedException
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import ElementNotInteractableException
-from Configuration.log_config import *
+import Configuration.log_config as lc
 
 class BasePage:
     """ Base page for Page Object Model"""
@@ -17,8 +17,8 @@ class BasePage:
         self.driver = driver
         self.wait = WebDriverWait(self.driver, 10)
         self.action = ActionChains(self.driver)
-        self.logger = get_debug_logger_()
-        self.c_logger = get_critical_logger()
+        self.logger = lc.get_debug_logger_()
+        self.c_logger = lc.get_critical_logger()
     
     def get_title(self):
         """ Get the title of the page """

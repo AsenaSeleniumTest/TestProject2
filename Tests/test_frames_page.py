@@ -1,10 +1,7 @@
 #!/usr/bin/env python3
 import pytest
-import selenium
 from Pages.MainPage import MainPage
-from Pages.Elements_Page import ElementsPage
 from Pages.IframePage import IFramePage
-from Pages.log_config import logger
 from Configuration.TestData import TestData
 
 @pytest.mark.usefixtures("driver_Setup")

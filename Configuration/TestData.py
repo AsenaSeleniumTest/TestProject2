@@ -18,6 +18,4 @@ class TestData:
 if __name__ == "__main__":
     print("TestData module is not meant to be run directly.")
     print("It is intended to be imported and used in other test modules.")
-    for p in sys.path:
-        print(p)
-    sys.exit(0)
+   

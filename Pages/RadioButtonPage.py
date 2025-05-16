@@ -7,7 +7,7 @@ class Radio_Button_Page(BasePage):
     """ Radio button page class for the application """
     
     def __init__(self, driver):
-        super().__init__(driver)
+        BasePage.__init__(self,driver)
         self.driver = driver
         self.radio_button_title = (By.XPATH,"//h1[text()='Radio Button']")
         self.radio_button_yes = (By.XPATH,"//label[@for='yesRadio']")
@@ -23,22 +23,22 @@ class Radio_Button_Page(BasePage):
         return self.get_element(self.radio_button_title)
     def click_radio_button_yes(self):
         """ Click on the radio button yes """
-        BasePage.click_element(self,element = self.radio_button_yes)
+        self.click_element(self.radio_button_yes)
     def click_radio_button_impressive(self):
         """ Click on the radio button impressive """
-        BasePage.click_element(self,element = self.radio_button_impressive)    
+        self.click_element(self.radio_button_impressive)    
     def radio_button_yes_is_displayed(self):
         """ Check if the radio button yes is displayed """
-        return BasePage.element_status_displayed(self,element = self.radio_button_yes)
+        return self.element_status_displayed(self.radio_button_yes)
     def radio_button_impressive_is_displayed(self):
         """ Check if the radio button impressive is displayed """
-        return BasePage.element_status_displayed(self,element = self.radio_button_impressive)
+        return self.element_status_displayed(self.radio_button_impressive)
     def get_you_have_selected_label(self):
         """ Check if the you have selected text is displayed """
-        return BasePage.get_element(self,element = self.p_you_selected)
+        return self.get_element(self.p_you_selected)
     def get_span_selected_yes(self):
         """ Get the span selected yes text """
-        return BasePage.get_element(self,element = self.span_selected_yes)
+        return self.get_element(self.span_selected_yes)
     def get_span_selected_impressive(self):
         """ Get the span selected impressive text """
-        return BasePage.get_element(self,element = self.span_selected_impressive)
+        return self.get_element(self.span_selected_impressive)

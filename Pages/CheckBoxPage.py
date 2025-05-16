@@ -11,7 +11,7 @@ class CheckBoxPage(BasePage):
     """ Check box page class for the application """
     
     def __init__(self, driver):
-        super().__init__(driver)
+        BasePage.__init__(self,driver)
         self.check_box_title = (By.XPATH,"//h1[text()='Check Box']")
         self.check_box_expand_all = (By.XPATH,"//span[@class='rct-text']//button")
         self.check_box_home = (By.XPATH,"//span[text()='Home']/ancestor::label")
@@ -24,11 +24,11 @@ class CheckBoxPage(BasePage):
         
     def get_check_box_title(self):
         """ Get the check box title """
-        return BasePage.get_element(self,element = self.check_box_title)
+        return self.get_element(self.check_box_title)
 
     def click_expand_all(self):
         """ Click on the expand all button """
-        BasePage.click_element(self,element = self.check_box_expand_all)
+        self.click_element(self.check_box_expand_all)
     
     def desktop_is_displayed(self):
         """ Check if the desktop is displayed """

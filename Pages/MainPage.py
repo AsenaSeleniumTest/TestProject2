@@ -41,7 +41,5 @@ class MainPage(BasePage):
         """ Click on the element """    
         BasePage.click_element(self,element = self.book_store_link)
 
-    def scroll_to_footer(self):
-        """ Scroll to the footers page """
-        BasePage.scroll_to_element(self,element = self.footer_element)
+    
       

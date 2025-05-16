@@ -1,0 +1,21 @@
+import os
+from alumnium import Alumni
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+
+os.environ["OPENAI_API_KEY"] = "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"
+service = Service(ChromeDriverManager().install())
+options = webdriver.ChromeOptions()
+driver = webdriver.Chrome(service = service,options = options)
+driver.maximize_window()
+driver.get("https://demoqa.com/")
+ub = Alumni(driver)
+ub.do("search for Alerts, frame and windows")
+ub.do("click on alerts, frame and windows")
+ub.do("click search Alerts ")
+ub.do("click on Alerts")
+list_button = ub.do("search for Click me buttons")
+ub.do("print the list of buttons")
+ub.do("click on click me button with index 0")
+driver.quit()
