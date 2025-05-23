@@ -1,0 +1,34 @@
+{
+    "students":[
+        {
+            "Name":"username1",
+            "LastName":"lastname",
+            "email":"correo@test.com",
+            "gender":"Male",
+            "Mobile":"12345698871",
+            "BirthDate":"19 Agosto 1987",
+            "Subjects" :"Subjects comments for testing",
+            "Hobbies":"1",
+            "picture":"../test_log.log",
+            "Address":"Calle ffracc y CP",
+            "state":"Haryana",
+            "city": "Panipat"  
+        },
+        {
+            "Name":"username2",
+            "LastName":"lastname2",
+            "email":"correo2@test2.com",
+            "gender":"Female",
+            "Mobile":"12345698871",
+            "BirthDate":"19 Agosto 1987",
+            "Subjects" :"Subjects comments for testing",
+            "Hobbies":"2",
+            "picture":"../test_log.log",
+            "Address":"Calle ffracc y CP",
+            "state":"Haryana",
+            "city": "Panipat"  
+        }
+
+
+    ]
+}

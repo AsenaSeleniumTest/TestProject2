@@ -15,6 +15,7 @@ class CheckBoxPage(BasePage):
         self.check_box_title = (By.XPATH,"//h1[text()='Check Box']")
         self.check_box_expand_all = (By.XPATH,"//span[@class='rct-text']//button")
         self.check_box_home = (By.XPATH,"//span[text()='Home']/ancestor::label")
+        self.expand_destktop = (By.XPATH,"")
         self.check_box_desktop = (By.XPATH,"//span[text()='Desktop']")
         self.check_box_documents= (By.XPATH,"//span[text()='Documents']")
         self.check_box_downloads = (By.XPATH,"//div[@id='result']//span[@class='text-success']")
@@ -28,26 +29,28 @@ class CheckBoxPage(BasePage):
 
     def click_expand_all(self):
         """ Click on the expand all button """
-        self.click_element(self.check_box_expand_all)
+        elem_list = self.get_element_list2(self.check_box_expand_all)
+        for elem in elem_list:
+            self.click_element_2(elem)
     
     def desktop_is_displayed(self):
         """ Check if the desktop is displayed """
-        return BasePage.element_status_displayed(self,element = self.check_box_desktop)
+        return self.element_status_displayed(self.check_box_desktop)
     
     def documents_is_displayed(self):
         """ Check if the documents is displayed """
-        return BasePage.element_status_displayed(self,element = self.check_box_documents)
+        return self.element_status_displayed(self.check_box_documents)
     
     def click_check_box_home(self):
         """ Click on the check box home """
-        BasePage.click_element(self,element = self.check_box_home)
+        self.click_element(self.check_box_home)
         
     def home_is_checked(self):
         """ Check if the home is checked """
         items_checked = []
         items_unchecked = []
-        if BasePage.element_status_displayed(self,element = self.check_box_home) is True:
-            elem = BasePage.get_element_list2(self,elements = self.checkbox_list)
+        if self.element_status_displayed(self.check_box_home) is True:
+            elem = self.get_element_list2(self.checkbox_list)
             print("elements : ",elem)
             for el in elem:
                 if el.is_selected():
@@ -60,5 +63,6 @@ class CheckBoxPage(BasePage):
     
     def get_checkbox_list(self):
         """ Get the check box list """
-        return BasePage.get_element_list(self,elements = self.text_checked_elements)
+        return self.get_element_list(self.text_checked_elements)
+    
              

@@ -21,44 +21,46 @@ path.append("..\\TestProject2\\Pages")
 # git remote add origin git@github.com: sammy/my-new-project.git.
 # git push -u -f origin main.
 #
-strArr = ["A:1","B:2","A:3","D:4","E:5","E:-6","D:7","H:8","C:9","B:10"]
-array2=set(strArr)
-
-def search_array(strArr):
-    suma=0 
-    key_list = []
-    valor_list = []
-    dic_values = {}
-    resultado = []
-    for i in strArr:
-        key1 = i.split(":")     
-        key_list.append (key1[0])
-        valor_list.append(key1[1]) 
-        dic_values[key1[0]] = int(key1[1])
-    key_list2 =set(key_list)
-    key_list2 = list(key_list2)
-    key_list2.sort()
-    print("key_list2: ",key_list2)      
-    for i in range(len(key_list2)):
-        for j in range(len(key_list)):
-            if key_list2[i] == key_list[j]:
-                suma = suma + int(valor_list[j])
-                print("key: ",key_list[j]," valor: ",valor_list[j])
-        resultado.append(str(key_list2[i])+":"+str(suma))        
-        suma = 0 
-        print("suma: ",suma)
-
-    print("key_list: ",key_list)
-    print("valor_list: ",valor_list)
-    print("dic_values: ",dic_values)
-    print("resultado: ",resultado)    
-    return resultado   
-               
-                
+digits = [ '1111110',  	# 0
+	   '0110000',	# 1
+	   '1101101',	# 2
+	   '1111001',	# 3
+	   '0110011',	# 4
+	   '1011011',	# 5
+	   '1011111',	# 6
+	   '1110000',	# 7
+	   '1111111',	# 8
+	   '1111011',	# 9
+	   ]
 
 
-    
-print(search_array(strArr))
+def print_number(num):
+	global digits
+	digs = str(num)
+	lines = [ '' for lin in range(5) ]
+	for d in digs:
+		segs = [ [' ',' ',' '] for lin in range(5) ]
+		ptrn = digits[ord(d) - ord('0')]
+		if ptrn[0] == '1':
+			segs[0][0] = segs[0][1] = segs[0][2] = '#'
+		if ptrn[1] == '1':
+			segs[0][2] = segs[1][2] = segs[2][2] = '#'
+		if ptrn[2] == '1':
+			segs[2][2] = segs[3][2] = segs[4][2] = '#'
+		if ptrn[3] == '1':
+			segs[4][0] = segs[4][1] = segs[4][2] = '#'
+		if ptrn[4] == '1':
+			segs[2][0] = segs[3][0] = segs[4][0] = '#'
+		if ptrn[5] == '1':
+			segs[0][0] = segs[1][0] = segs[2][0] = '#'
+		if ptrn[6] == '1':
+			segs[2][0] = segs[2][1] = segs[2][2] = '#'
+		for lin in range(5):
+			lines[lin] += ''.join(segs[lin]) + ' '
+	for lin in lines:
+		print(lin)
 
+
+print_number(int(input("Enter the number you wish to display: ")))
 
  

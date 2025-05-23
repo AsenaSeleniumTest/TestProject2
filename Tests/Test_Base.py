@@ -20,12 +20,12 @@ class Test_Base:
     driver = None
     
     @pytest.fixture(scope='package',autouse=True)
-    def setup_pages(self,driver_Setup):
+    def setup_checkbox(self,driver_Setup):
         """_summary_: set up driver to run tests
         """
         self.driver = driver_Setup
         check_box_page = CheckBoxPage(self.driver)
-            
+        return check_box_page
         
     @pytest.fixture(scope='class',autouse=True,params=["chrome"])
     def setup(self,request):

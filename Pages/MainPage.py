@@ -19,27 +19,27 @@ class MainPage(BasePage):
     
     def click_elements_page(self):
         """ Click on the element """
-        BasePage.click_element(self,element =self.elements_link)
+        self.click_element(self.elements_link)
 
     def click_forms_page(self):
         """ Click on the element """
-        BasePage.click_element(self,element =self.forms_link)
+        self.click_element(self.forms_link)
 
     def click_alerts_page(self):
         """ Click on the element """
-        BasePage.click_element(self,element = self.alerts_link)
+        self.click_element(self.alerts_link)
 
     def click_widgets_page(self):
         """ Click on the element """
-        BasePage.click_element(self,element = self.widgets_link)
+        self.click_element(self.widgets_link)
 
     def click_interactions_page(self):
         """ Click on the element """
-        BasePage.click_element(self,element = self.interactions_link)
+        self.click_element(self.interactions_link)
 
     def click_bookstore_page(self):
         """ Click on the element """    
-        BasePage.click_element(self,element = self.book_store_link)
+        self.click_element(self.book_store_link)
 
     
       

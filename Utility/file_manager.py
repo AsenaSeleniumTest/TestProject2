@@ -1,8 +1,10 @@
 import sys
 import os
+import json
 import openpyxl as xl
 from os import strerror
 import logging
+
 
 
 class File_Manager():
@@ -97,17 +99,19 @@ class File_Manager():
         except PermissionError as exp:
             logging.critical("Directory Permission denied : %s",exp.__str__ )
             
-    def write_excel_file(self,data):
+    def read_json_file(self):
         """ Wrtie data into excel file"""
+        try:
+            with open(self.directory,"r",encoding="utf-8") as f:
+                data_1 = json.load(f)
+                data_list = data_1["students"]
+                return data_list
+        except FileNotFoundError as file:
+            return file
         
-        pass
 
 if __name__ == "__main__":
-    file_excel = File_Manager("C:\\Data\\cuentas.xlsx")
-    datos = file_excel.read_excel_file()
-    data_clean = []
-    for d in datos:
-        for r in d:
-            if r is not None:
-                data_clean.append(r)
-    print(data_clean, end="\n ")
+    
+    file_json= File_Manager("../Tests/Data/formdata.json")
+    data2 = file_json.read_json_file
+    print(type(data2))

@@ -16,17 +16,16 @@ class Test_CheckBoxPage():
     d_logger = get_debug_logger_()
 
     @pytest.mark.CheckBoxTitle
-    def test_checkboxtitle(self,driver_Setup):    
+    def test_checkboxtitle(self,driver_Setup):
         """Checks the Check Box title is displayed"""
         self.driver = driver_Setup
-        self.driver.get(TestData.url)
+        check_box_page = CheckBoxPage(self.driver)
         mainp =MainPage(self.driver)
         elements_page = ElementsPage(self.driver)
-        checkBoxPage= CheckBoxPage(self.driver)
         mainp.click_elements_page()
         elements_page.click_check_box_text()
-        checkBoxPage.click_expand_all()
-        texto = checkBoxPage.get_check_box_title().text
+        check_box_page.click_expand_all()
+        texto = check_box_page.get_check_box_title().text
         assert texto == "Check Box"
         self.d_logger.info("Check Box title done : %s",texto)
         
@@ -35,7 +34,6 @@ class Test_CheckBoxPage():
     def test_desktop_menu_present(self,driver_Setup):
         """Checks the Desktop menu option is dispplayed"""
         self.driver = driver_Setup
-        self.driver.get(TestData.url)
         mainp = MainPage(self.driver)
         elements_page = ElementsPage(self.driver)
         checkBoxPage= CheckBoxPage(self.driver)
@@ -49,7 +47,6 @@ class Test_CheckBoxPage():
     def test_documents_menu_present(self,driver_Setup):
         """Checks the Documents menu option is displayed"""
         self.driver = driver_Setup
-        self.driver.get(TestData.url)
         mainp = MainPage(self.driver)
         elements_page = ElementsPage(self.driver)
         check_Box_Page= CheckBoxPage(self.driver)
@@ -63,7 +60,6 @@ class Test_CheckBoxPage():
     def test_checkbox_checked(self,driver_Setup):
         """Checks the check box is checked"""
         self.driver = driver_Setup
-        self.driver.get(TestData.url)
         mainp = MainPage(self.driver)
         elements_page = ElementsPage(self.driver)
         check_Box_Page= CheckBoxPage(self.driver)
@@ -80,7 +76,6 @@ class Test_CheckBoxPage():
     def test_check_box_list(self,driver_Setup):
         """Checks the check box list is displayed"""
         self.driver = driver_Setup
-        self.driver.get(TestData.url)
         mainp = MainPage(self.driver)
         elements_page = ElementsPage(self.driver)
         check_Box_Page= CheckBoxPage(self.driver)

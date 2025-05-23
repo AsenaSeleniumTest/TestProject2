@@ -88,10 +88,41 @@ class BasePage:
             self.wait.until(EC.visibility_of_element_located(element)).click()
             self.logger.debug("Element clicked : %s",element)
         except ElementClickInterceptedException as ex:
-            screenshot_path = f"error_screenshots/{self.timestamp}/{element}.png"
-            self.driver.save_screenshot(screenshot_path)
             self.c_logger.error("Element is not clickable : %s",ex.__str__)
-
+    
+    def click_element_2(self,element):
+        """TestClickelement refined method"""
+        try:
+            element.click()
+            self.logger.debug("Element clicked : %s",element)
+        except ElementClickInterceptedException as ex:
+            self.c_logger.error("Element is not clickable : %s",ex.__str__)
+            
+    def click_radio_button(self,elements,text_to_click):
+        """This function is a generic to click on any radio button gorup selection, 
+        by giving the element list and the parameter to find the element that will be clicked"""
+        element_list = self.get_element_list2(elements)
+        for element in element_list:
+            try:
+                if element.text == text_to_click:
+                    self.wait.until(EC.presence_of_element_located(element)).click()
+                    self.logger.debug("Element clicked : %s",element)
+                    break
+            except ElementClickInterceptedException as ex:
+                    self.c_logger.error("Element is not clickable : %s",ex.__str__)
+                    
+    def click_checkbox_item(self,elements,cvalue):
+        """clik to select check box item"""
+        element_list = self.get_element_list2(elements)
+        for element in element_list:
+           try:
+                if element.get_property("value") == cvalue:
+                    self.wait.until(EC.visibility_of_element_located(element)).click()
+                    self.logger.debug("checkbox selected : %s ",element)
+                    break
+           except ElementClickInterceptedException as ex:
+               self.c_logger.error("Element is not clicable : %s",ex.__str__)
+    
     def element_status_displayed(self,element):
         """check if element is displayed"""
         try:

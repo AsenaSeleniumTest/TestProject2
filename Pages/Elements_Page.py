@@ -24,7 +24,8 @@ class ElementsPage(BasePage):
         self.radio_button_span = (By.XPATH,"//span[text()='Radio Button']")
         self.web_tables_span = (By.XPATH,"//span[text()='Web Tables']")
         self.alert_frame_window = (By.XPATH,"//span[text()='Alerts, Frame & Windows']")
-
+        self.practice_form_menu = (By.XPATH,"//span[text()='Practice Form']")
+        
     def get_menu_list_elements(self):
         """ Get the list of elements on the webpage"""
         return self.get_element_list(self.menu_list_elements)
@@ -61,6 +62,10 @@ class ElementsPage(BasePage):
                 self.click_element(element)
                 break
 
+    def click_practice_form_menu(self):
+        """click on the practice form menu"""
+        self.click_element(self.practice_form_menu)
+        
     def click_radio_button(self):
         """ Click on the radio button """
         for element in self.menu_list_elements:
