@@ -27,7 +27,6 @@ class Test_ElementsPage():
         driver.get(TestData.url)
         mainp = MainPage(driver)
         elements_page = ElementsPage(driver)
-        #mainp.scroll_to_footer()
         mainp.click_elements_page()
         list_menu = elements_page.get_menu_list_elements()
         assert len(list_menu) == 9

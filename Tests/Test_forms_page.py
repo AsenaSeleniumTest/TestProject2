@@ -17,10 +17,9 @@ class Test_form_page():
         """Test method to submit a form"""
         driver = driver_Setup
         m_page=MainPage(driver)
-        f_page = Forms_Page(driver)
-        e_page = ElementsPage(driver)
         m_page.click_forms_page()
-        e_page.click_practice_form_menu()
+        e_page = ElementsPage(driver)
+        f_page = e_page.click_practice_form_menu()
         f_page.type_user_name(test_data["Name"])
         f_page.type_last_name(test_data["LastName"])
         f_page.type_email(test_data["email"])

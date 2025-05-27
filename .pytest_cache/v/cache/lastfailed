@@ -82,5 +82,8 @@
   "Tests/Test_forms_page.py::Test_form_page::test_fill_form_male[chrome-f]": true,
   "Tests/Test_forms_page.py::Test_form_page::test_fill_form_male[chrome-i]": true,
   "Tests/Test_forms_page.py::Test_form_page::test_fill_form_male[chrome-l]": true,
-  "Tests/Test_forms_page.py::Test_form_page::test_fill_form_male[chrome-e1]": true
+  "Tests/Test_forms_page.py::Test_form_page::test_fill_form_male[chrome-e1]": true,
+  "Tests/Test_checkbox.py::Test_CheckBoxPage::test_checkboxtitle[chrome]": true,
+  "Tests/Test_book_store_login.py::Test_book_store_login::test_invalid_login[chrome]": true,
+  "Tests/Test_book_store_login.py::Test_book_store_login::test_create_user[chrome]": true
 }

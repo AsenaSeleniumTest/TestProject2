@@ -51,4 +51,3 @@ def read_json_file():
             return file
     
     
-    

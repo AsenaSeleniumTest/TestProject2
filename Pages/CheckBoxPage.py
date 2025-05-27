@@ -12,14 +12,17 @@ class CheckBoxPage(BasePage):
     
     def __init__(self, driver):
         BasePage.__init__(self,driver)
+        self.expand_all_button = (By.XPATH,"//button[@title='Expand all']")
+        self.collapse_all_button = (By.XPATH,"//button[@title='Collapse all']")
         self.check_box_title = (By.XPATH,"//h1[text()='Check Box']")
-        self.check_box_expand_all = (By.XPATH,"//span[@class='rct-text']//button")
+        self.check_box_all_expanded= (By.XPATH,"//span[@class='rct-text']//button")
         self.check_box_home = (By.XPATH,"//span[text()='Home']/ancestor::label")
         self.expand_destktop = (By.XPATH,"")
         self.check_box_desktop = (By.XPATH,"//span[text()='Desktop']")
         self.check_box_documents= (By.XPATH,"//span[text()='Documents']")
         self.check_box_downloads = (By.XPATH,"//div[@id='result']//span[@class='text-success']")
-        self.check_box_check_element = (By.XPATH,"//*[name()='svg' and @class='rct-icon rct-icon-check']")
+        self.check_box_check = (By.XPATH,"//*[name()='svg' and @class='rct-icon rct-icon-check']")
+        self.check_box_unchecked = (By.XPATH,"//*[name()='svg' and @class='rct-icon rct-icon-uncheck']")
         self.text_checked_elements = (By.XPATH,"//div[@id='result']/span")
         self.checkbox_list = (By.CSS_SELECTOR,"input[type='checkbox']")
         
@@ -28,11 +31,17 @@ class CheckBoxPage(BasePage):
         return self.get_element(self.check_box_title)
 
     def click_expand_all(self):
-        """ Click on the expand all button """
-        elem_list = self.get_element_list2(self.check_box_expand_all)
-        for elem in elem_list:
-            self.click_element_2(elem)
+        """ Click on the expand all checkboxes must be count of 6 """
+        self.click_element(self.expand_all_button)
+        return self.get_element_list(self.check_box_all_expanded)
+        
+    def click_collapse_all(self):
+        """Method to test collapse all checkbox list must return count of 1"""
+        self.click_element(self.expand_all_button)
+        self.click_element(self.collapse_all_button)
+        return self.get_element_list(self.check_box_all_expanded)
     
+#pendiente continuar desde aqui para los nuevos metodos, refactorizados
     def desktop_is_displayed(self):
         """ Check if the desktop is displayed """
         return self.element_status_displayed(self.check_box_desktop)

@@ -2,7 +2,6 @@ import sys
 import os
 import json
 import openpyxl as xl
-from os import strerror
 import logging
 
 
@@ -28,7 +27,7 @@ class File_Manager():
             if data_set in file_list:
                 print(f"trying to delete: {data_set}")
                 os.remove(self.directory+data_set)
-        except FileNotFoundError as ferror:       
+        except FileNotFoundError as ferror:
             return ferror
         except PermissionError as exp:
             logging.critical("Directory Permission denied : %s ",exp.__str__ )
@@ -103,15 +102,16 @@ class File_Manager():
         """ Wrtie data into excel file"""
         try:
             with open(self.directory,"r",encoding="utf-8") as f:
-                data_1 = json.load(f)
+                data_1 = json.loads(f)
                 data_list = data_1["students"]
-                return data_list
+            return data_list
         except FileNotFoundError as file:
             return file
         
 
 if __name__ == "__main__":
     
-    file_json= File_Manager("../Tests/Data/formdata.json")
+    file_json= File_Manager("C:\\Data\\formdata.json")
     data2 = file_json.read_json_file
     print(type(data2))
+   

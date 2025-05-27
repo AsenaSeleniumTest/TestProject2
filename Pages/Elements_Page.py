@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 from selenium.webdriver.common.by import By
 from Pages.BasePage import BasePage
-
+from Pages.Forms_Page import Forms_Page
+from Pages.CheckBoxPage import CheckBoxPage
 class ElementsPage(BasePage):
     """ Elements page class for the application """
         
@@ -65,6 +66,7 @@ class ElementsPage(BasePage):
     def click_practice_form_menu(self):
         """click on the practice form menu"""
         self.click_element(self.practice_form_menu)
+        return Forms_Page(self.driver)
         
     def click_radio_button(self):
         """ Click on the radio button """
@@ -91,6 +93,8 @@ class ElementsPage(BasePage):
     def click_check_box_text(self):
         """ Click on the check box """
         self.click_element(self.check_box_span)
+        return CheckBoxPage(self.driver)
+    
     def click_radio_button_menu(self):
         """ Click on the radio button """
         self.click_element(self.radio_button_span)
