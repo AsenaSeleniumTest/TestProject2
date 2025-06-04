@@ -3,6 +3,7 @@ import math
 import os
 import random
 import re
+import json
 from sys import path
 path.append("..\\TestProject2\\Pages") 
 
@@ -20,45 +21,35 @@ path.append("..\\TestProject2\\Pages")
 # git push --tags 
 # git remote add origin git@github.com: sammy/my-new-project.git.
 # git push -u -f origin main.
-#
-strArr = ["A:1","B:2","A:3","D:4","E:5","E:-6","D:7","H:8","C:9","B:10"]
-array2=set(strArr)
+#Completar el ejercicio de sortear los caracteres
+# Rank an array of integers 1 for highest and so forth add same rank for duplicates
+# Count ip´addresses based on input ip address and rturn the number of ip addresses
 
-def search_array(strArr):
-    suma=0 
-    key_list = []
-    valor_list = []
-    dic_values = {}
-    resultado = []
-    for i in strArr:
-        key1 = i.split(":")     
-        key_list.append (key1[0])
-        valor_list.append(key1[1]) 
-        dic_values[key1[0]] = int(key1[1])
-    key_list2 =set(key_list)
-    key_list2 = list(key_list2)
-    key_list2.sort()
-    print("key_list2: ",key_list2)      
-    for i in range(len(key_list2)):
-        for j in range(len(key_list)):
-            if key_list2[i] == key_list[j]:
-                suma = suma + int(valor_list[j])
-                print("key: ",key_list[j]," valor: ",valor_list[j])
-        resultado.append(str(key_list2[i])+":"+str(suma))        
-        suma = 0 
-        print("suma: ",suma)
+def sort_code(code):
+    """"""
+    return "".join(sorted(code))
 
-    print("key_list: ",key_list)
-    print("valor_list: ",valor_list)
-    print("dic_values: ",dic_values)
-    print("resultado: ",resultado)    
-    return resultado   
-               
-                
+def rank_scores(scores):
+	"""Rank an array of integers 1 for highest and so forth add same rank for duplicates"""	
+	sorted_scores = sorted(scores,reverse=True)
+	rank_dict = {score: rank + 1 for rank, score in enumerate(sorted_scores)}
+	return [rank_dict[score] for score in  sorted_scores]
 
+data = rank_scores([100, 90, 90, 80, 75, 60])
+print(data)
 
-    
-print(search_array(strArr))
-
-
- 
+def read_json_file():
+        """ read data from json file"""
+        os.chdir("..\\TestProject2\\Tests\\Data")
+        try:
+            with open("formdata.json","r") as f:
+                data_1 = json.load(f)
+                data_list = data_1["students"]
+                return data_list
+        except FileNotFoundError as file:
+            return file
+        
+if __name__ == "__main__":
+	
+	file_data = read_json_file()
+	print(file_data[1])

@@ -22,7 +22,4 @@ class SelectPage(BasePage):
         """get the selected element exist on the dropdown options"""
         return BasePage.get_element(self, element = self.div_text_to_validate)
         
-    def scroll_to_menu(self):
-        """_summary_ to scroll to a menu element
-        """
-        BasePage.scroll_to_element(self,element = self.div_text_to_validate)   
+   
