@@ -13,6 +13,7 @@ class MainPage(BasePage):
     
     def __init__(self, driver):
         BasePage.__init__(self,driver)
+        self.menu_list = (By.XPATH,"//h5")
         self.elements_link = (By.XPATH,"//h5[text()='Elements']")
         self.forms_link = (By.XPATH,"//h5[text()='Forms']")
         self.alerts_link = (By.XPATH,"//h5[text()='Alerts, Frame & Windows']")
@@ -21,7 +22,9 @@ class MainPage(BasePage):
         self.book_store_link = (By.XPATH,"//h5[text()='Book Store Application']")
         self.footer_element = (By.XPATH,"//div[text()='Book Store Application']")
 
-    
+    def get_menu_list(self):
+        """Get the list of menu items on the main page"""
+        return self.get_element_list(self.menu_list)
     def click_elements_page(self):
         """ Click on the element """
         self.click_element(self.elements_link)
@@ -48,7 +51,9 @@ class MainPage(BasePage):
         return InteractionsPage(self.driver)
 
     def click_bookstore_page(self):
-        """ Click on the element """    
+        """ Click on the element """
+        
+        self.action.scroll_by_amount(0,400).perform()
         self.click_element(self.book_store_link)
         return BookStorePage(self.driver)
 

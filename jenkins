@@ -9,8 +9,9 @@ pipeline {
         }
         stage('Test') {
             steps {
-                pytest --html=report.html 
-                echo 'Testing..'
+                bat 
+                    pytest --html=report.html 
+                    echo 'Testing..'
             }
         }
         stage('Deploy') {

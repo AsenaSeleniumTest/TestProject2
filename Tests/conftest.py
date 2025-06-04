@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-import pytest
 import json
+import os
+import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.common.exceptions import WebDriverException
@@ -37,17 +38,3 @@ def data_forms():
     data_file = File_Manager("C:\\users\\formusers.xlsx")
     datalist = data_file.read_excel_file()
     return datalist
-
-@pytest.fixture(scope="function",autouse=False)
-def read_json_file():
-        """ read data from json file"""
-        try:
-            with open("../Tests/Data/formdata.json","r") as f:
-                data_1 = json.load(f)
-                data_list = data_1["students"]
-                print(data_list)
-                return data_list
-        except FileNotFoundError as file:
-            return file
-    
-    

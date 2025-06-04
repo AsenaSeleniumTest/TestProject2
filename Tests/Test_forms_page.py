@@ -1,18 +1,29 @@
 #!/usr/bin/env python3
+import os
+import json
 import pytest
 from Pages.Forms_Page import Forms_Page
 from Pages.MainPage import MainPage
 from Pages.Elements_Page import ElementsPage
 from Utility.file_manager import File_Manager
 
-
-@pytest.mark.usefixtures("driver_Setup")
+@pytest.fixture(autouse=True,scope="function")
+def read_json_file():
+    """ read data from json file"""
+    os.chdir("..\\TestProject2\\Tests\\Data")
+    try:
+        with open("formdata.json","r",encoding="utf-8") as f:
+            data_1 = json.load(f)
+            data_list = data_1["students"]
+            return data_list
+    except FileNotFoundError as file:
+        return file
+        
+@pytest.mark.usefixtures("driver_Setup",)
 class Test_form_page():
 
-    
-    
     @pytest.mark.testForm
-    @pytest.mark.parametrize("test_data","read_json_file")
+    @pytest.mark.parametrize("test_data",read_json_file)
     def test_fill_form_male(self,driver_Setup,test_data):
         """Test method to submit a form"""
         driver = driver_Setup
@@ -20,20 +31,18 @@ class Test_form_page():
         m_page.click_forms_page()
         e_page = ElementsPage(driver)
         f_page = e_page.click_practice_form_menu()
-        f_page.type_user_name(test_data["Name"])
-        f_page.type_last_name(test_data["LastName"])
-        f_page.type_email(test_data["email"])
-        f_page.select_gender(test_data["gender"])
-        f_page.type_mobile(test_data["Mobile"])
-        f_page.type_date_of_birth(test_data["BirthDate"])
-        f_page.type_subjects(test_data["subject"])
-        f_page.select_hobbies(test_data["hobbies"])
-        f_page.upload_file(test_data["picture"])
-        f_page.type_current_address(test_data["Address"])
-        f_page.select_city(test_data["state"])
-        f_page.select_city(test_data["city"])
-        f_page.click_submit_form()
-        title = f_page.get_submitted_form_title()
+        title =f_page.fill_form(test_data["Name"],
+                                test_data["LastName"],
+                                test_data["email"],
+                                test_data["gender"],
+                                test_data["Mobile"],
+                                test_data["BirthDate"],
+                                test_data["subject"],
+                                test_data["hobbies"],
+                                test_data["picture"],
+                                test_data["Address"],
+                                test_data["state"],
+                                test_data["city"])
         assert  title.text == "Thanks for submitting the form"
         
         

@@ -21,7 +21,23 @@ class Forms_Page(BasePage):
         #elements for the modal on submit
         self.__title_submitted = (By.XPATH,"//div[text()='Thanks for submitting the form']")
         
-        
+    
+    def fill_form(self,first_name,lname,email,gender,mnumber,dob,subject,cbox,path,address,state,city):
+        """Method to fill the form with the given data"""
+        self.type_user_name(first_name)
+        self.type_last_name(lname)
+        self.type_email(email)
+        self.select_gender(gender)
+        self.type_mobile(mnumber)
+        self.type_date_of_birth(dob)
+        self.type_subjects(subject)
+        self.select_hobbies(cbox)
+        self.upload_file(path)
+        self.type_current_address(address)
+        self.select_state(state)
+        self.select_city(city)
+        self.click_submit_form()
+        return self.get_submitted_form_title()
         
     def type_user_name(self,first_name):
         """Type the user name"""

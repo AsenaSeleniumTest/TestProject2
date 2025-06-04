@@ -8,7 +8,7 @@ class ElementsPage(BasePage):
         
     def __init__(self, driver):
         BasePage.__init__(self,driver)
-        self.texbox_span = (By.XPATH,"//span[text()='Text Box']") 
+        self.texbox_span = (By.XPATH,"//span[text()='Text Box']")
         self.submit_form = (By.XPATH,"//button[@id='submit']")
         self.menu_list_elements = (By.XPATH,"//div[@class='element-list collapse show']//li//span[@class='text']")
         self.textbox_name_element = (By.ID,"userName")
@@ -68,13 +68,6 @@ class ElementsPage(BasePage):
         self.click_element(self.practice_form_menu)
         return Forms_Page(self.driver)
         
-    def click_radio_button(self):
-        """ Click on the radio button """
-        for element in self.menu_list_elements:
-            if self.get_element(element).text == "Radio Button":
-                self.click_element(element)
-                break
-
     def click_web_tables(self):  
         """ Click on the web tables """
         for element in self.menu_list_elements:

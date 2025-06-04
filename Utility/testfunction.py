@@ -3,6 +3,7 @@ import math
 import os
 import random
 import re
+import json
 from sys import path
 path.append("..\\TestProject2\\Pages") 
 
@@ -20,47 +21,35 @@ path.append("..\\TestProject2\\Pages")
 # git push --tags 
 # git remote add origin git@github.com: sammy/my-new-project.git.
 # git push -u -f origin main.
-#
-digits = [ '1111110',  	# 0
-	   '0110000',	# 1
-	   '1101101',	# 2
-	   '1111001',	# 3
-	   '0110011',	# 4
-	   '1011011',	# 5
-	   '1011111',	# 6
-	   '1110000',	# 7
-	   '1111111',	# 8
-	   '1111011',	# 9
-	   ]
+#Completar el ejercicio de sortear los caracteres
+# Rank an array of integers 1 for highest and so forth add same rank for duplicates
+# Count ip´addresses based on input ip address and rturn the number of ip addresses
 
+def sort_code(code):
+    """"""
+    return "".join(sorted(code))
 
-def print_number(num):
-	global digits
-	digs = str(num)
-	lines = [ '' for lin in range(5) ]
-	for d in digs:
-		segs = [ [' ',' ',' '] for lin in range(5) ]
-		ptrn = digits[ord(d) - ord('0')]
-		if ptrn[0] == '1':
-			segs[0][0] = segs[0][1] = segs[0][2] = '#'
-		if ptrn[1] == '1':
-			segs[0][2] = segs[1][2] = segs[2][2] = '#'
-		if ptrn[2] == '1':
-			segs[2][2] = segs[3][2] = segs[4][2] = '#'
-		if ptrn[3] == '1':
-			segs[4][0] = segs[4][1] = segs[4][2] = '#'
-		if ptrn[4] == '1':
-			segs[2][0] = segs[3][0] = segs[4][0] = '#'
-		if ptrn[5] == '1':
-			segs[0][0] = segs[1][0] = segs[2][0] = '#'
-		if ptrn[6] == '1':
-			segs[2][0] = segs[2][1] = segs[2][2] = '#'
-		for lin in range(5):
-			lines[lin] += ''.join(segs[lin]) + ' '
-	for lin in lines:
-		print(lin)
+def rank_scores(scores):
+	"""Rank an array of integers 1 for highest and so forth add same rank for duplicates"""	
+	sorted_scores = sorted(scores,reverse=True)
+	rank_dict = {score: rank + 1 for rank, score in enumerate(sorted_scores)}
+	return [rank_dict[score] for score in  sorted_scores]
 
+data = rank_scores([100, 90, 90, 80, 75, 60])
+print(data)
 
-print_number(int(input("Enter the number you wish to display: ")))
-
- 
+def read_json_file():
+        """ read data from json file"""
+        os.chdir("..\\TestProject2\\Tests\\Data")
+        try:
+            with open("formdata.json","r") as f:
+                data_1 = json.load(f)
+                data_list = data_1["students"]
+                return data_list
+        except FileNotFoundError as file:
+            return file
+        
+if __name__ == "__main__":
+	
+	file_data = read_json_file()
+	print(file_data[1])
