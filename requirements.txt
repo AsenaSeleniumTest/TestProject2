@@ -1,6 +1,8 @@
 selenium
 webdriver_manager
 pytest
+pytest-dependency
+pytest-order
 Appium-Python-Client
 pytest-xdist
 pytest-html

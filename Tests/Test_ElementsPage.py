@@ -21,7 +21,7 @@ class Test_ElementsPage():
         assert driver.title == "DEMOQA"
         
     @pytest.mark.ElementsMenu
-    def test_elementsmenu_count(self,driver_Setup):    
+    def test_elementsmenu_count(self,driver_Setup):
         """Test Elements page elements"""     
         driver = driver_Setup
         driver.get(TestData.url)
@@ -32,7 +32,7 @@ class Test_ElementsPage():
         assert len(list_menu) == 9
         
 
-    @pytest.mark.ElementsMenu  
+    @pytest.mark.ElementsMenu 
     def test_click_text_box(self,driver_Setup):   
         """Test Elements page elements"""     
         driver = driver_Setup
@@ -70,7 +70,7 @@ class Test_ElementsPage():
         elements_page.click_check_box_text()
         text = checkBoxPage.get_check_box_title().text
         
-        assert text == "Check Box"    
+        assert text == "Check Box"
     
     @pytest.mark.check
     def test_home_checked(self,driver_Setup):
