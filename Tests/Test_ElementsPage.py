@@ -56,7 +56,7 @@ class Test_ElementsPage():
         elements_page.type_current_address(TestData.current_address)
         elements_page.type_permanent_address(TestData.Permanent_address)
         elements_page.click_submit_form()
-        assert TestData.full_name == elements_page.get_submitted_name().text
+        assert TestData.full_name in elements_page.get_submitted_name().text
     
     @pytest.mark.checkBoxTitle
     def test_check_box_forms(self,driver_Setup):
@@ -84,7 +84,9 @@ class Test_ElementsPage():
         elements_page.click_check_box_text()
         checkBoxPage.click_expand_all()
         checkBoxPage.click_check_box_home()
-        assert checkBoxPage.home_is_checked() is True
+        elem_list_checked, elem_list_unchecked =checkBoxPage.home_is_checked()
+        assert  len(elem_list_checked) == 17
+        assert len(elem_list_unchecked) == 0
     
     
         

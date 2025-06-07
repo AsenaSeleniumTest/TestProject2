@@ -113,5 +113,15 @@ if __name__ == "__main__":
     
     file_json= File_Manager("C:\\Data\\formdata.json")
     data2 = file_json.read_json_file
-    print(type(data2))
-   
+    print(file_json.__dict__["directory"])
+    def powers_of_two(n):
+        """Function to return powers of two"""
+        power = 1
+        for i in range(n):
+            yield power
+            power *= 2
+    a = (chr(x) for x in range(32,120) if x % 2 != 0)
+    print(a)
+    for i in a:
+        print(i)
+    
