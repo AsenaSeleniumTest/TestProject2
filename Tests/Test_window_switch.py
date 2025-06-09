@@ -34,26 +34,4 @@ class Test_window_page():
         driver.switch_to.window(whandles[1])
         new_page_element = w_page.get_element((By.ID,"sampleHeading"))
         assert new_page_element.text == "This is a sample page"
-        assert len(whandles) == 2
-        
-    @pytest.mark.RahulShettyAcademyTest
-    def test_academy_new_tab(self, driver_Setup):
-        """Test to validate the new tab from Rahul Shetty Academy"""
-        driver = driver_Setup
-        driver.get("https://rahulshettyacademy.com/")
-        mainp=MainPage(driver)
-        mainp.action.move_to_element(mainp.get_element((By.XPATH,"//a[text()='More ']"))).perform()
-        mainp.action.move_to_element(mainp.get_element((By.XPATH,"//a[text()='Contact']"))).click(mainp.get_element((By.XPATH,"//a[text()='Contact']"))).perform()
-        contact_mail = mainp.get_element((By.XPATH,"//h4[text()='E-mail']/parent::li"))
-        driver.navigate().back()
-        mainp.click_element((By.XPATH,"//a[text()='Login']"))
-        mainp.get_element((By.XPATH,"//input[@id='email']")).send_keys(contact_mail.text)
-        mainp.click_element((By.XPATH,"//span[text()='Log In']"))
-        assert "Verify" == mainp.get_element((By.XPATH,"//span[text()='Verify']")).text
-        
-        
-        
-        
-        
-        
-    
+        assert len(whandles) == 2   

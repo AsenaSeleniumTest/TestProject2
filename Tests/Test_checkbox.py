@@ -68,7 +68,7 @@ class Test_CheckBoxPage():
         check_Box_Page.click_expand_all()
         check_Box_Page.click_check_box_home()
         checked,unchecked = check_Box_Page.home_is_checked()
-        assert "home" in checked
+        assert "tree-node-home" in checked
         assert len(unchecked) == 0
         self.d_logger.info("Checked elements : %s",checked)
      

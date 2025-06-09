@@ -16,12 +16,7 @@ class Test_Select_Page():
         driver = driver_Setup
         driver.get(TestData.url)
         mainp = MainPage(driver)
-        wPage = WidgetPage(driver)
-        sPage = SelectPage(driver)
-        mainp.click_widgets_page()
-        wPage.scroll_menu()
-        wPage.click_select_menu()
-        sPage.click_select_value_dropdown()
-        sPage.type_text_select_dropdown("Group 2, option 1")
-        expected_element = sPage.get_element_selected()
+        w_Page= mainp.click_widgets_page()
+        s_Page = w_Page.click_select_menu()
+        expected_element = s_Page.click_select_value_dropdown("Group 2, option 1")
         assert "Group 2, option 1" == expected_element.text

@@ -19,8 +19,8 @@ class Test_frames_page():
         f_page.click_frame_menu()
         f_frame = f_page.get_frame("frame1")
         print("Width: " + f_frame.get_property("width"))
-        f_page.go_to_iframe(f_frame)
-        assert "This is a sample page" in driver.page_source
+        element = f_page.go_to_iframe(f_frame)
+        assert "This is a sample page" == element.text
     
     @pytest.mark.frameswitch
     def test_frame2_switch(self, driver_Setup):
@@ -31,11 +31,10 @@ class Test_frames_page():
         f_page = IFramePage(driver)
         mainp.click_alerts_page()
         f_page.click_frame_menu()
-        f_frame = f_page.get_frame("frame2")
-        
+        f_frame = f_page.get_frame("frame2")        
         print("Width: " + f_frame.get_property("width"))
-        f_page.go_to_iframe(f_frame)
-        assert "This is a sample page" in driver.page_source
+        element = f_page.go_to_iframe(f_frame)
+        assert "This is a sample page" == element.text
     
     @pytest.mark.testalert
     def test_alert(self,driver_Setup):

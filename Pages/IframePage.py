@@ -17,7 +17,7 @@ class IFramePage(BasePage):
         self.prompt_alert_button = (By.XPATH,"//button[@id='promtButton']")
         self.confirm_alert_emessage = (By.XPATH,"//span[@id='confirmResult']")
         self.prompt_alert_emessage = (By.XPATH,"//span[@id='promptResult']")
-        #HS28291115
+        
     
     def get_frame_list(self):
         """get all frame list"""
@@ -31,6 +31,7 @@ class IFramePage(BasePage):
         """function to switch to the element frame"""
         try:
             self.driver.switch_to.frame(frame)
+            return self.get_element((By.XPATH,"//h1[text()='This is a sample page']"))
         except NoSuchElementException as ex:
             print("Element not found or took too much time to load : ",ex)
             return ex

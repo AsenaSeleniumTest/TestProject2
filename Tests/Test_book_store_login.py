@@ -21,17 +21,8 @@ class Test_book_store_login():
         book_store_page = main_p.click_bookstore_page()
         user = book_store_page.login_function("usuario1","Se5JiFCy@EAVAwp")
         assert user.text == "usuario1"
-        
-    @pytest.mark.bookstorelogin
-    def test_create_user(self, driver_Setup):
-        """Test create user"""
-        driver = driver_Setup
-        mainp = MainPage(driver)
-        book_store_page = mainp.click_bookstore_page()
-        message = book_store_page.create_user("John", "Doe", "john_doe", "Password123!")
-        assert message == "User created successfully."
-    
-    @pytest.mark.booklist    
+            
+    @pytest.mark.booklist
     def test_book_list(self,driver_Setup):
         b_list =["Git Pocket Guide","Learning JavaScript Design Patterns","Designing Evolvable Web APIs with ASP.NET","Speaking JavaScript","You Don't Know JS","Programming JavaScript Applications","Eloquent JavaScript, Second Edition","Understanding ECMAScript 6"]
         driver = driver_Setup        

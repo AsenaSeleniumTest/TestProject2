@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 from Pages.BasePage import BasePage
-
+from Pages.SelectPage import SelectPage
 class WidgetPage(BasePage):
     """Page clase for the Widget Menu"""
     def __init__(self,driver):
@@ -10,8 +10,7 @@ class WidgetPage(BasePage):
         
     def click_select_menu(self):
         """function to click select menu"""
-        BasePage.click_element(self,element = self.select_menu_element)
-        
-    def scroll_menu(self):
-        """scrolling menu""" 
-        BasePage.scroll_to_element(self,element = self.select_menu_element) 
+        self.driver.execute_script("window.scrollTo(0, 400);")
+        self.click_element(self.select_menu_element)
+        return SelectPage(self.driver)
+    

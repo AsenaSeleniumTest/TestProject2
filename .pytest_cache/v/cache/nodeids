@@ -36,6 +36,7 @@
   "Tests/Test_forms_page.py::Test_form_page::test_fill_form_male[chrome-o]",
   "Tests/Test_forms_page.py::Test_form_page::test_fill_form_male[chrome-r]",
   "Tests/Test_forms_page.py::Test_form_page::test_fill_form_male[chrome-s]",
+  "Tests/Test_forms_page.py::Test_form_page::test_fill_form_male[chrome]",
   "Tests/Test_interactions_page.py::Test_interactions_page::test_drag_element[chrome]",
   "Tests/Test_interactions_page.py::Test_interactions_page::test_drag_element[edge]",
   "Tests/Test_interactions_page.py::Test_interactions_page::test_get_sortable_list[chrome]",
