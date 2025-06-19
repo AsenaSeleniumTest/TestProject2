@@ -22,12 +22,12 @@ class BasePage:
     
     def get_title(self):
         """ Get the title of the page """
-        self.logger.debug("Getting the title of the page")
+        self.logger.info("Getting the title of the page")
         return self.driver.title
 
     def get_current_window(self):
         """ Get the current window handle """
-        self.logger.debug("Getting the current window handle %s",self.driver.current_window_handle)
+        self.logger.info("Getting the current window handle %s",self.driver.current_window_handle)
         return self.driver.current_window_handle
     
     def accept_alert(self):
@@ -37,7 +37,7 @@ class BasePage:
             alert = self.driver.switch_to.alert
             texto = alert.text
             alert.accept()
-            self.logger.debug("Alert accepted : %s",texto)
+            self.logger.info("Alert accepted : %s",texto)
             return texto
         except NoSuchElementException as ex:
             screenshot_path = f"error_screenshots/{self.timestamp}/alert.png"
@@ -51,7 +51,7 @@ class BasePage:
             alert = self.driver.switch_to.alert
             text = alert.text
             alert.accept()
-            self.logger.debug("Alert accepted : %s",text)
+            self.logger.info("Alert accepted : %s",text)
             return text
         except NoSuchElementException as ex:
             screenshot_path = f"error_screenshots/{self.timestamp}/alert.png"
@@ -66,7 +66,7 @@ class BasePage:
         alert.send_keys(text)
         texto = alert.text
         alert.accept()
-        self.logger.debug("Alert accepted : %s",texto)
+        self.logger.info("Alert accepted : %s",texto)
         return texto
     
     def cancel_alert(self):
@@ -74,7 +74,7 @@ class BasePage:
         try:
             self.wait.until(EC.alert_is_present())
             alert = self.driver.switch_to.alert
-            self.logger.debug("Alert text dismissed : %s",alert.text)
+            self.logger.info("Alert text dismissed : %s",alert.text)
             alert.dismiss()
         except NotImplementedError as ex:
             screenshot_path = f"error_screenshots/{self.timestamp}/alert.png"
@@ -86,7 +86,7 @@ class BasePage:
         """Method to click elements on the webpage"""
         try:
             self.wait.until(EC.visibility_of_element_located(element)).click()
-            self.logger.debug("Element clicked : %s",element)
+            self.logger.info("Element clicked : %s",element)
         except ElementClickInterceptedException as ex:
             self.c_logger.error("Element is not clickable : %s",ex.__str__)
     
@@ -94,7 +94,7 @@ class BasePage:
         """TestClickelement refined method"""
         try:
             element.click()
-            self.logger.debug("Element clicked : %s",element)
+            self.logger.info("Element clicked : %s",element)
         except ElementClickInterceptedException as ex:
             self.c_logger.error("Element is not clickable : %s",ex.__str__)
             
@@ -106,7 +106,7 @@ class BasePage:
             try:
                 if element.text == text_to_click:
                     self.wait.until(EC.presence_of_element_located(element)).click()
-                    self.logger.debug("Element clicked : %s",element)
+                    self.logger.info("Element clicked : %s",element)
                     break
             except ElementClickInterceptedException as ex:
                     self.c_logger.error("Element is not clickable : %s",ex.__str__)
@@ -118,7 +118,7 @@ class BasePage:
            try:
                 if element.get_property("value") == cvalue:
                     self.wait.until(EC.visibility_of_element_located(element)).click()
-                    self.logger.debug("checkbox selected : %s ",element)
+                    self.logger.info("checkbox selected : %s ",element)
                     break
            except ElementClickInterceptedException as ex:
                self.c_logger.error("Element is not clicable : %s",ex.__str__)
@@ -126,7 +126,7 @@ class BasePage:
     def element_status_displayed(self,element):
         """check if element is displayed"""
         try:
-            self.logger.debug("Checking if element is displayed : %s",element)
+            self.logger.info("Checking if element is displayed : %s",element)
             return self.wait.until(EC.visibility_of_element_located(element)).is_displayed()
         except NoSuchElementException as ex:
             screenshot_path = f"error_screenshots/{self.timestamp}/{element}.png"
@@ -137,7 +137,7 @@ class BasePage:
         """Method to typetext on elements webpage"""
         try:
             self.wait.until(EC.visibility_of_element_located(element)).send_keys(text)
-            self.logger.debug("Text typed : %s",text)
+            self.logger.info("Text typed : %s",text)
         except ElementNotInteractableException as ex:
             screenshot_path = f"error_screenshots/{self.timestamp}/{element}.png"
             self.driver.save_screenshot(screenshot_path)
@@ -146,7 +146,7 @@ class BasePage:
     def get_element_list(self,elements):
         """ Get the list of elements on the webpage by visibility"""
         try:
-            self.logger.debug("Getting the list of elements : %s",elements)
+            self.logger.info("Getting the list of elements : %s",elements)
             return self.wait.until(EC.visibility_of_all_elements_located(elements))
         except NoSuchElementException as ex:
             screenshot_path = f"./error_screenshots/{self.timestamp}/{elements}.png"
@@ -157,7 +157,7 @@ class BasePage:
     def get_element_list2(self,elements):
         """get the elemenst by availability"""
         try:
-            self.logger.debug("Getting the list of elements : %s",elements)
+            self.logger.info("Getting the list of elements : %s",elements)
             return self.wait.until(EC.presence_of_all_elements_located(elements))
         except NoSuchElementException as ex:
             self.c_logger.error("Elements not found or took too much time to load : %s ",ex.__str__)
@@ -166,7 +166,7 @@ class BasePage:
     def get_element(self,element):
         """ Get the text of the element """
         try:
-            self.logger.debug("Getting the element : %s",element)
+            self.logger.info("Getting the element : %s",element)
             return self.wait.until(EC.visibility_of_element_located(element))
         except NoSuchElementException as ex:
             screenshot_path = f"error_screenshots/{self.timestamp}/{element}.png"

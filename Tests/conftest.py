@@ -18,7 +18,7 @@ def driver_Setup(request):
     if request.param == "chrome":
         service = Service(ChromeDriverManager().install())
         options = webdriver.ChromeOptions()
-       # options.add_argument("headless")
+        #options.add_argument("headless")
         options.add_argument("--ignore-certificate-errors")
         driver = webdriver.Chrome(service = service,options = options)
         driver.maximize_window()

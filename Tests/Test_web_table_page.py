@@ -67,9 +67,9 @@ class Test_WebTablePage():
         for data in data_list:
             if data.text != " ":
                 clean_data_list.append(data.text)
-            elif data.text == "Jhon":
-                found_person = data.text
-        assert "Jhon" == found_person
+                if data.text == "Jhon":
+                    found_person = data.text
+        assert "John" in clean_data_list
         
         
           

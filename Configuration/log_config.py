@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 import logging as Logger
-import datetime as Datetime
+from datetime import datetime
 
 
 
 def get_debug_logger_():
     """Get the logger configuration"""
-    path = 'Logs/testlogs/test_log.log'
+    path = f'Logs/testlogs/test_log{datetime.now()}.log'
     d_logger = Logger.getLogger(__name__)
     d_logger.setLevel(Logger.INFO)
     d_formater = Logger.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -17,7 +17,7 @@ def get_debug_logger_():
 
 def get_critical_logger():
     """Get the logger configuration"""
-    path = 'Logs/testlogs/error_log.log'
+    path = f'Logs/testlogs/error_log{datetime.now()}.log'
     c_logger = Logger.getLogger(__name__)
     c_logger.setLevel(Logger.CRITICAL)
     c_formater = Logger.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
