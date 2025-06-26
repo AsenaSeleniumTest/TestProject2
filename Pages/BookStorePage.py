@@ -33,6 +33,7 @@ class BookStorePage(BasePage):
         self.type_text(self.__user_namme_input, username)
         self.type_text(self.__password_input, password)
         self.click_element(self.__login_button)
+        self.logger.info("Login with invalid userid and password : %s",__name__)
         return self.get_element(self.__invalid_user_message)
     
     def login_function(self,username, password):
@@ -41,7 +42,8 @@ class BookStorePage(BasePage):
         self.type_text(self.__user_namme_input, username)
         self.type_text(self.__password_input, password)
         self.click_element(self.__login_button)
-        return self.get_element(self.__logged_user_name)  
+        self.logger.info("Login valid user name: %s",__name__)
+        return self.get_element(self.__logged_user_name)
      
     def create_user(self,fName, lName, userName, password):
         """Method to create a new user in book store application"""
@@ -59,17 +61,19 @@ class BookStorePage(BasePage):
         self.click_element(self.__register_button)
         
         message = self.accept_alert()
+        self.logger.info("Creating user: %s",__name__)
         return message
     
     def get_book_list(self):
         """Method to get the list of books in the book store"""
         self.click_element(self.__book_store_menu_button)
-        
+        self.logger.info("Getting book list : %s",__name__)
         return self.get_element_list(self.__book_list)
         
     def search_book(self, book_name):
         """Method to search a book in the book store"""
         self.click_element(self.__book_store_menu_button)
         self.type_text(self.__search_book_input, book_name)
+        self.logger.info("Search a book  : %s, book: %s",__name__,book_name)
         return self.get_element_list(self.__book_list)
         

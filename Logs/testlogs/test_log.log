@@ -1,0 +1,118 @@
+2025-06-20 13:00:05,714 - __main__ - INFO - This is a debug log message.
+2025-06-20 13:00:05,714 - __main__ - CRITICAL - This is a critical log message.
+2025-06-20 13:04:37,471 - Configuration.log_config - INFO - Element clicked : ('xpath', "//h5[text()='Book Store Application']")
+2025-06-20 13:04:37,540 - Configuration.log_config - INFO - Element clicked : ('xpath', "//span[text()='Book Store']")
+2025-06-20 13:04:37,540 - Configuration.log_config - INFO - Element clicked : ('xpath', "//span[text()='Book Store']")
+2025-06-20 13:04:37,540 - Configuration.log_config - INFO - Getting book list : Pages.BookStorePage
+2025-06-20 13:04:37,540 - Configuration.log_config - INFO - Getting book list : Pages.BookStorePage
+2025-06-20 13:04:37,540 - Configuration.log_config - INFO - Getting the list of elements : ('xpath', "//div[@class='action-buttons']//a")
+2025-06-20 13:04:37,540 - Configuration.log_config - INFO - Getting the list of elements : ('xpath', "//div[@class='action-buttons']//a")
+2025-06-20 13:04:40,122 - Configuration.log_config - INFO - Element clicked : ('xpath', "//h5[text()='Book Store Application']")
+2025-06-20 13:04:40,201 - Configuration.log_config - INFO - Element clicked : ('xpath', "//span[text()='Login']")
+2025-06-20 13:04:40,201 - Configuration.log_config - INFO - Element clicked : ('xpath', "//span[text()='Login']")
+2025-06-20 13:04:40,256 - Configuration.log_config - INFO - Text typed : invalid_user
+2025-06-20 13:04:40,256 - Configuration.log_config - INFO - Text typed : invalid_user
+2025-06-20 13:04:40,310 - Configuration.log_config - INFO - Text typed : invalid_password
+2025-06-20 13:04:40,310 - Configuration.log_config - INFO - Text typed : invalid_password
+2025-06-20 13:04:40,392 - Configuration.log_config - INFO - Element clicked : ('id', 'login')
+2025-06-20 13:04:40,392 - Configuration.log_config - INFO - Element clicked : ('id', 'login')
+2025-06-20 13:04:40,393 - Configuration.log_config - INFO - Login with invalid userid and password : Pages.BookStorePage
+2025-06-20 13:04:40,393 - Configuration.log_config - INFO - Login with invalid userid and password : Pages.BookStorePage
+2025-06-20 13:04:40,393 - Configuration.log_config - INFO - Getting the element : ('xpath', "//p[@id='name']")
+2025-06-20 13:04:40,393 - Configuration.log_config - INFO - Getting the element : ('xpath', "//p[@id='name']")
+2025-06-20 13:12:26,812 - Configuration.log_config - INFO - Element clicked : ('xpath', "//h5[text()='Book Store Application']")
+2025-06-20 13:12:26,860 - Configuration.log_config - INFO - Element clicked : ('xpath', "//span[text()='Book Store']")
+2025-06-20 13:12:26,860 - Configuration.log_config - INFO - Element clicked : ('xpath', "//span[text()='Book Store']")
+2025-06-20 13:12:26,895 - Configuration.log_config - INFO - Element clicked : ('xpath', "//h5[text()='Book Store Application']")
+2025-06-20 13:12:26,966 - Configuration.log_config - INFO - Element clicked : ('xpath', "//span[text()='Book Store']")
+2025-06-20 13:12:26,966 - Configuration.log_config - INFO - Element clicked : ('xpath', "//span[text()='Book Store']")
+2025-06-20 13:12:27,481 - Configuration.log_config - INFO - Text typed : Git
+2025-06-20 13:12:27,481 - Configuration.log_config - INFO - Text typed : Git
+2025-06-20 13:12:27,481 - Configuration.log_config - INFO - Search a book  : Pages.BookStorePage, book: Git
+2025-06-20 13:12:27,481 - Configuration.log_config - INFO - Search a book  : Pages.BookStorePage, book: Git
+2025-06-20 13:12:27,481 - Configuration.log_config - INFO - Getting the list of elements : ('xpath', "//div[@class='action-buttons']//a")
+2025-06-20 13:12:27,481 - Configuration.log_config - INFO - Getting the list of elements : ('xpath', "//div[@class='action-buttons']//a")
+2025-06-20 13:12:27,639 - Configuration.log_config - INFO - Text typed : Git
+2025-06-20 13:12:27,639 - Configuration.log_config - INFO - Text typed : Git
+2025-06-20 13:12:27,639 - Configuration.log_config - INFO - Search a book  : Pages.BookStorePage, book: Git
+2025-06-20 13:12:27,639 - Configuration.log_config - INFO - Search a book  : Pages.BookStorePage, book: Git
+2025-06-20 13:12:27,639 - Configuration.log_config - INFO - Getting the list of elements : ('xpath', "//div[@class='action-buttons']//a")
+2025-06-20 13:12:27,639 - Configuration.log_config - INFO - Getting the list of elements : ('xpath', "//div[@class='action-buttons']//a")
+2025-06-20 13:34:54,017 - Configuration.log_config - INFO - click_element - Element clicked : ('xpath', "//h5[text()='Book Store Application']")
+2025-06-20 13:34:54,069 - Configuration.log_config - INFO - click_element - Element clicked : ('xpath', "//span[text()='Login']")
+2025-06-20 13:34:54,069 - Configuration.log_config - INFO - click_element - Element clicked : ('xpath', "//span[text()='Login']")
+2025-06-20 13:34:54,132 - Configuration.log_config - INFO - type_text - Text typed : usuario1
+2025-06-20 13:34:54,132 - Configuration.log_config - INFO - type_text - Text typed : usuario1
+2025-06-20 13:34:54,192 - Configuration.log_config - INFO - click_element - Element clicked : ('xpath', "//h5[text()='Book Store Application']")
+2025-06-20 13:34:54,195 - Configuration.log_config - INFO - type_text - Text typed : Se5JiFCy@EAVAwp
+2025-06-20 13:34:54,195 - Configuration.log_config - INFO - type_text - Text typed : Se5JiFCy@EAVAwp
+2025-06-20 13:34:54,245 - Configuration.log_config - INFO - click_element - Element clicked : ('id', 'login')
+2025-06-20 13:34:54,245 - Configuration.log_config - INFO - click_element - Element clicked : ('id', 'login')
+2025-06-20 13:34:54,245 - Configuration.log_config - INFO - login_function - Login valid user name: Pages.BookStorePage
+2025-06-20 13:34:54,245 - Configuration.log_config - INFO - login_function - Login valid user name: Pages.BookStorePage
+2025-06-20 13:34:54,245 - Configuration.log_config - INFO - get_element - Getting the element : ('id', 'userName-value')
+2025-06-20 13:34:54,245 - Configuration.log_config - INFO - get_element - Getting the element : ('id', 'userName-value')
+2025-06-20 13:34:54,286 - Configuration.log_config - INFO - click_element - Element clicked : ('xpath', "//span[text()='Login']")
+2025-06-20 13:34:54,286 - Configuration.log_config - INFO - click_element - Element clicked : ('xpath', "//span[text()='Login']")
+2025-06-20 13:34:54,348 - Configuration.log_config - INFO - type_text - Text typed : invalid_user
+2025-06-20 13:34:54,348 - Configuration.log_config - INFO - type_text - Text typed : invalid_user
+2025-06-20 13:34:54,403 - Configuration.log_config - INFO - type_text - Text typed : invalid_password
+2025-06-20 13:34:54,403 - Configuration.log_config - INFO - type_text - Text typed : invalid_password
+2025-06-20 13:34:54,507 - Configuration.log_config - INFO - click_element - Element clicked : ('id', 'login')
+2025-06-20 13:34:54,507 - Configuration.log_config - INFO - click_element - Element clicked : ('id', 'login')
+2025-06-20 13:34:54,507 - Configuration.log_config - INFO - login_function_invalid - Login with invalid userid and password : Pages.BookStorePage
+2025-06-20 13:34:54,507 - Configuration.log_config - INFO - login_function_invalid - Login with invalid userid and password : Pages.BookStorePage
+2025-06-20 13:34:54,507 - Configuration.log_config - INFO - get_element - Getting the element : ('xpath', "//p[@id='name']")
+2025-06-20 13:34:54,507 - Configuration.log_config - INFO - get_element - Getting the element : ('xpath', "//p[@id='name']")
+2025-06-20 13:34:56,266 - Configuration.log_config - INFO - click_element - Element clicked : ('xpath', "//h5[text()='Book Store Application']")
+2025-06-20 13:34:56,321 - Configuration.log_config - INFO - click_element - Element clicked : ('xpath', "//span[text()='Book Store']")
+2025-06-20 13:34:56,321 - Configuration.log_config - INFO - click_element - Element clicked : ('xpath', "//span[text()='Book Store']")
+2025-06-20 13:34:57,001 - Configuration.log_config - INFO - type_text - Text typed : Git
+2025-06-20 13:34:57,001 - Configuration.log_config - INFO - type_text - Text typed : Git
+2025-06-20 13:34:57,001 - Configuration.log_config - INFO - search_book - Search a book  : Pages.BookStorePage, book: Git
+2025-06-20 13:34:57,001 - Configuration.log_config - INFO - search_book - Search a book  : Pages.BookStorePage, book: Git
+2025-06-20 13:34:57,001 - Configuration.log_config - INFO - get_element_list - Getting the list of elements : ('xpath', "//div[@class='action-buttons']//a")
+2025-06-20 13:34:57,001 - Configuration.log_config - INFO - get_element_list - Getting the list of elements : ('xpath', "//div[@class='action-buttons']//a")
+2025-06-20 13:34:58,330 - Configuration.log_config - INFO - click_element - Element clicked : ('xpath', "//h5[text()='Book Store Application']")
+2025-06-20 13:34:58,377 - Configuration.log_config - INFO - click_element - Element clicked : ('xpath', "//span[text()='Book Store']")
+2025-06-20 13:34:58,377 - Configuration.log_config - INFO - click_element - Element clicked : ('xpath', "//span[text()='Book Store']")
+2025-06-20 13:34:58,378 - Configuration.log_config - INFO - get_book_list - Getting book list : Pages.BookStorePage
+2025-06-20 13:34:58,378 - Configuration.log_config - INFO - get_book_list - Getting book list : Pages.BookStorePage
+2025-06-20 13:34:58,378 - Configuration.log_config - INFO - get_element_list - Getting the list of elements : ('xpath', "//div[@class='action-buttons']//a")
+2025-06-20 13:34:58,378 - Configuration.log_config - INFO - get_element_list - Getting the list of elements : ('xpath', "//div[@class='action-buttons']//a")
+2025-06-20 13:54:34,485 - Configuration.log_config - INFO - click_element - Element clicked : ('xpath', "//h5[text()='Book Store Application']"),: MainPage
+2025-06-20 13:54:34,575 - Configuration.log_config - INFO - click_element - Element clicked : ('xpath', "//span[text()='Book Store']"),: BookStorePage
+2025-06-20 13:54:34,575 - Configuration.log_config - INFO - click_element - Element clicked : ('xpath', "//span[text()='Book Store']"),: BookStorePage
+2025-06-20 13:54:34,711 - Configuration.log_config - INFO - click_element - Element clicked : ('xpath', "//h5[text()='Book Store Application']"),: MainPage
+2025-06-20 13:54:34,783 - Configuration.log_config - INFO - click_element - Element clicked : ('xpath', "//span[text()='Login']"),: BookStorePage
+2025-06-20 13:54:34,783 - Configuration.log_config - INFO - click_element - Element clicked : ('xpath', "//span[text()='Login']"),: BookStorePage
+2025-06-20 13:54:34,870 - Configuration.log_config - INFO - type_text - Text typed : invalid_user : BookStorePage
+2025-06-20 13:54:34,870 - Configuration.log_config - INFO - type_text - Text typed : invalid_user : BookStorePage
+2025-06-20 13:54:34,976 - Configuration.log_config - INFO - type_text - Text typed : invalid_password : BookStorePage
+2025-06-20 13:54:34,976 - Configuration.log_config - INFO - type_text - Text typed : invalid_password : BookStorePage
+2025-06-20 13:54:35,092 - Configuration.log_config - INFO - click_element - Element clicked : ('id', 'login'),: BookStorePage
+2025-06-20 13:54:35,092 - Configuration.log_config - INFO - click_element - Element clicked : ('id', 'login'),: BookStorePage
+2025-06-20 13:54:35,092 - Configuration.log_config - INFO - login_function_invalid - Login with invalid userid and password : Pages.BookStorePage
+2025-06-20 13:54:35,092 - Configuration.log_config - INFO - login_function_invalid - Login with invalid userid and password : Pages.BookStorePage
+2025-06-20 13:54:35,093 - Configuration.log_config - INFO - get_element - Getting the element : ('xpath', "//p[@id='name']") : BookStorePage
+2025-06-20 13:54:35,093 - Configuration.log_config - INFO - get_element - Getting the element : ('xpath', "//p[@id='name']") : BookStorePage
+2025-06-20 13:54:36,103 - Configuration.log_config - INFO - click_element - Element clicked : ('xpath', "//h5[text()='Book Store Application']"),: MainPage
+2025-06-20 13:54:36,171 - Configuration.log_config - INFO - click_element - Element clicked : ('xpath', "//span[text()='Login']"),: BookStorePage
+2025-06-20 13:54:36,171 - Configuration.log_config - INFO - click_element - Element clicked : ('xpath', "//span[text()='Login']"),: BookStorePage
+2025-06-20 13:54:36,240 - Configuration.log_config - INFO - type_text - Text typed : usuario1 : BookStorePage
+2025-06-20 13:54:36,240 - Configuration.log_config - INFO - type_text - Text typed : usuario1 : BookStorePage
+2025-06-20 13:54:36,346 - Configuration.log_config - INFO - type_text - Text typed : Se5JiFCy@EAVAwp : BookStorePage
+2025-06-20 13:54:36,346 - Configuration.log_config - INFO - type_text - Text typed : Se5JiFCy@EAVAwp : BookStorePage
+2025-06-20 13:54:36,411 - Configuration.log_config - INFO - click_element - Element clicked : ('id', 'login'),: BookStorePage
+2025-06-20 13:54:36,411 - Configuration.log_config - INFO - click_element - Element clicked : ('id', 'login'),: BookStorePage
+2025-06-20 13:54:36,411 - Configuration.log_config - INFO - login_function - Login valid user name: Pages.BookStorePage
+2025-06-20 13:54:36,411 - Configuration.log_config - INFO - login_function - Login valid user name: Pages.BookStorePage
+2025-06-20 13:54:36,411 - Configuration.log_config - INFO - get_element - Getting the element : ('id', 'userName-value') : BookStorePage
+2025-06-20 13:54:36,411 - Configuration.log_config - INFO - get_element - Getting the element : ('id', 'userName-value') : BookStorePage
+2025-06-20 13:54:40,835 - Configuration.log_config - INFO - click_element - Element clicked : ('xpath', "//h5[text()='Book Store Application']"),: MainPage
+2025-06-20 13:54:40,895 - Configuration.log_config - INFO - click_element - Element clicked : ('xpath', "//span[text()='Book Store']"),: BookStorePage
+2025-06-20 13:54:40,895 - Configuration.log_config - INFO - click_element - Element clicked : ('xpath', "//span[text()='Book Store']"),: BookStorePage
+2025-06-20 13:54:40,895 - Configuration.log_config - INFO - get_book_list - Getting book list : Pages.BookStorePage
+2025-06-20 13:54:40,895 - Configuration.log_config - INFO - get_book_list - Getting book list : Pages.BookStorePage
+2025-06-20 13:54:40,895 - Configuration.log_config - INFO - get_element_list - Getting the list of elements : ('xpath', "//div[@class='action-buttons']//a") : BookStorePage
+2025-06-20 13:54:40,895 - Configuration.log_config - INFO - get_element_list - Getting the list of elements : ('xpath', "//div[@class='action-buttons']//a") : BookStorePage

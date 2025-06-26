@@ -14,3 +14,4 @@ class WidgetPage(BasePage):
         self.click_element(self.select_menu_element)
         return SelectPage(self.driver)
     
+    

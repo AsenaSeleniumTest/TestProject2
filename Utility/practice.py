@@ -1,10 +1,8 @@
 from google import genai
 from google.genai.types import HttpOptions
-from datetime import datetime
-import time
+from datetime import datetime,date
+from datetime import timedelta
+import math
 
 
-def time_function():
-    print(datetime.now())
-
-time_function()
+print(dir(math))
